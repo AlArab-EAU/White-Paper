@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { LanguageProvider } from "@/components/whitepaper/i18n/LanguageProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AlArab — Whitepaper | The Digital Future of the Arab World",
   description:
-    "Official AlArab Whitepaper: a unified digital ecosystem where technology, culture, commerce, entertainment and innovation converge into a new digital geography for the Arab world.",
+    "Official AlArab Whitepaper: a unified digital ecosystem where technology, culture, commerce, entertainment and innovation converge into a new digital geography for the Arab world. Available in 8 languages.",
   keywords: [
     "AlArab",
     "ALA",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AlArab — The Digital Future of the Arab World",
     description:
-      "Official Whitepaper. Six pillars. Four digital districts. One ecosystem.",
+      "Official Whitepaper. Six pillars. Four digital districts. One ecosystem. Available in 8 languages.",
     url: "https://whitepaper.alarab-defi.com",
     siteName: "AlArab Whitepaper",
     type: "website",
@@ -58,7 +59,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
         <Toaster />
       </body>
     </html>

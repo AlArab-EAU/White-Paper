@@ -9,22 +9,16 @@ import {
   Landmark,
   Lightbulb,
   Users,
-  Globe2,
   ChevronDown,
 } from "lucide-react";
 import { Section } from "../Section";
+import { useLanguage } from "../i18n/LanguageProvider";
 
-const PILLARS = [
-  { icon: Cpu, name: "Technology", desc: "Blockchain, AI, VR & cloud infrastructure powering a new digital geography." },
-  { icon: Sparkles, name: "Entertainment", desc: "Live events, immersive experiences and digital culture for the Arab world." },
-  { icon: ShoppingBag, name: "Commerce", desc: "On-chain marketplaces, digital payments and creator-driven trade." },
-  { icon: Landmark, name: "Culture", desc: "Heritage, arts and museums reimagined as persistent virtual districts." },
-  { icon: Lightbulb, name: "Innovation", desc: "Eight industry verticals converging into one programmable ecosystem." },
-  { icon: Users, name: "Community", desc: "A network of creators, builders and citizens shaping the digital future." },
-];
+const PILLAR_ICONS = [Cpu, Sparkles, ShoppingBag, Landmark, Lightbulb, Users];
 
 /* ============================== 00 — COVER ============================== */
 export function CoverSection() {
+  const { t } = useLanguage();
   return (
     <section
       id="cover"
@@ -38,7 +32,7 @@ export function CoverSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-city.png"
-          alt="Futuristic Arabian Gulf megacity at night"
+          alt="AlArab — futuristic Arabian Gulf megacity at night"
           fill
           priority
           className="object-cover opacity-50"
@@ -56,7 +50,7 @@ export function CoverSection() {
         >
           <span className="w-2 h-2 rounded-full bg-alarab-gold alarab-pulse" />
           <span className="text-[11px] tracking-[0.3em] uppercase text-alarab-muted">
-            Official Whitepaper · 2026 Edition
+            {t.meta.whitepaperBadge}
           </span>
         </motion.div>
 
@@ -66,7 +60,7 @@ export function CoverSection() {
           transition={{ duration: 0.9, delay: 0.15 }}
           className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.95]"
         >
-          <span className="text-gradient-gold">AL ARAB</span>
+          <span className="text-gradient-gold">{t.cover.title}</span>
         </motion.h1>
 
         <motion.p
@@ -75,7 +69,7 @@ export function CoverSection() {
           transition={{ duration: 0.9, delay: 0.3 }}
           className="mt-6 text-lg sm:text-xl md:text-2xl text-alarab-text/90 font-light tracking-wide"
         >
-          The Digital Future of the Arab World
+          {t.cover.subtitle}
         </motion.p>
 
         <motion.div
@@ -84,14 +78,12 @@ export function CoverSection() {
           transition={{ duration: 0.9, delay: 0.5 }}
           className="mt-8 flex flex-wrap justify-center gap-x-3 gap-y-2 text-xs sm:text-sm text-alarab-cyan/80"
         >
-          {["Technology", "Culture", "Innovation", "Metaverse", "Digital Economy"].map(
-            (tag, i) => (
-              <span key={tag} className="flex items-center gap-3">
-                {i > 0 && <span className="text-alarab-muted/40">•</span>}
-                <span className="tracking-widest uppercase">{tag}</span>
-              </span>
-            )
-          )}
+          {t.cover.tags.map((tag, i) => (
+            <span key={tag} className="flex items-center gap-3">
+              {i > 0 && <span className="text-alarab-muted/40">•</span>}
+              <span className="tracking-widest uppercase">{tag}</span>
+            </span>
+          ))}
         </motion.div>
 
         <motion.div
@@ -104,7 +96,7 @@ export function CoverSection() {
             href="#contents"
             className="text-alarab-muted hover:text-alarab-gold transition-colors flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em]"
           >
-            Scroll to begin
+            {t.meta.scrollBegin}
             <ChevronDown className="w-4 h-4 animate-bounce" />
           </a>
         </motion.div>
@@ -112,7 +104,7 @@ export function CoverSection() {
 
       <div className="absolute bottom-6 left-0 right-0 z-10 flex justify-center">
         <div className="text-[10px] text-alarab-muted/60 font-mono tracking-widest">
-          whitepaper.alarab-defi.com
+          {t.meta.domain}
         </div>
       </div>
     </section>
@@ -120,44 +112,21 @@ export function CoverSection() {
 }
 
 /* ============================== 01 — CONTENTS ============================== */
-const TOC = [
-  { n: "01", t: "Executive Summary", id: "executive-summary" },
-  { n: "02", t: "Vision & Mission", id: "vision" },
-  { n: "03", t: "The AlArab Ecosystem", id: "arab-future" },
-  { n: "04", t: "AlArab Metaverse", id: "metaverse" },
-  { n: "05", t: "Four Digital Districts", id: "districts" },
-  { n: "06", t: "The Persistent Virtual World", id: "persistent-world" },
-  { n: "07", t: "Ecosystem Architecture", id: "architecture" },
-  { n: "08", t: "Digital Economy", id: "digital-economy" },
-  { n: "09", t: "Blockchain & Smart Contracts", id: "blockchain" },
-  { n: "10", t: "AI + Blockchain + VR + Cloud", id: "ai-stack" },
-  { n: "11", t: "ALA — Digital Asset", id: "ala-intro" },
-  { n: "12", t: "Tokenomics", id: "tokenomics" },
-  { n: "13", t: "Token Utility", id: "ala-utility" },
-  { n: "14", t: "Creator Economy", id: "creator-economy" },
-  { n: "15", t: "Digital Assets & NFTs", id: "digital-assets" },
-  { n: "16", t: "Eight Industry Verticals", id: "verticals" },
-  { n: "17", t: "Roadmap", id: "roadmap" },
-  { n: "18", t: "Strategic Partnerships", id: "partnerships" },
-  { n: "19", t: "Transparency & Contracts", id: "transparency" },
-  { n: "20", t: "Risk & Compliance", id: "risk" },
-  { n: "21", t: "Conclusion", id: "conclusion" },
-];
-
 export function ContentsSection() {
+  const { t } = useLanguage();
   return (
     <Section
       id="contents"
       number="01"
-      eyebrow="Index"
-      title={<span className="text-gradient-duo">Contents</span>}
-      subtitle="A 21-chapter journey through the AlArab ecosystem — from vision and metaverse districts to ALA tokenomics, creator economy and transparent smart contracts."
+      eyebrow={t.contents.eyebrow}
+      title={<span className="text-gradient-duo">{t.contents.title}</span>}
+      subtitle={t.contents.subtitle}
     >
       <div className="grid sm:grid-cols-2 gap-x-8 gap-y-1">
-        {TOC.map((item, i) => (
+        {t.contents.items.map((item, i) => (
           <motion.a
-            key={item.id}
-            href={`#${item.id}`}
+            key={item.num}
+            href={`#executive-summary`}
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -165,7 +134,7 @@ export function ContentsSection() {
             className="group flex items-baseline gap-4 py-2.5 border-b border-white/[0.04] hover:border-alarab-gold/30 transition-colors"
           >
             <span className="font-mono text-[11px] text-alarab-gold/70 w-8 shrink-0">
-              {item.n}
+              {item.num}
             </span>
             <span className="text-sm text-alarab-text/90 group-hover:text-alarab-gold transition-colors flex-1">
               {item.t}
@@ -182,59 +151,31 @@ export function ContentsSection() {
 
 /* ============================== 02 — EXECUTIVE SUMMARY ============================== */
 export function ExecutiveSummarySection() {
+  const { t } = useLanguage();
+  const e = t.executive;
   return (
     <Section
       id="executive-summary"
       number="02"
-      eyebrow="Overview"
+      eyebrow={e.eyebrow}
       title={
         <>
-          A unified <span className="text-gradient-gold">digital ecosystem</span>, not
-          just a platform
+          {e.title.pre}{" "}
+          <span className="text-gradient-gold">{e.title.highlight}</span>
+          {e.title.post}
         </>
       }
     >
       <div className="space-y-6 text-base sm:text-lg leading-relaxed text-alarab-text/85">
-        <p>
-          AlArab is a unified digital ecosystem where technology, culture, commerce,
-          entertainment and innovation converge into a new digital geography for the
-          Arab world. It is built as a programmable layer that connects avatars,
-          digital assets, virtual districts, on-chain payments and creator-driven
-          economies under a single, transparent identity.
-        </p>
-        <p>
-          At its core, AlArab is structured around six strategic pillars —
-          Technology, Entertainment, Commerce, Culture, Innovation and Community — and
-          materialized through four persistent virtual districts: the Golden City,
-          Culture Plaza, Digital Souk and Creative District. Together they form a
-          continuous, multi-platform world accessible across Web, Mobile, VR and AR.
-        </p>
-        <p>
-          The ecosystem is powered by the ALA digital asset, with a fixed total
-          supply of 999,000,000 units. ALA functions as a utility token for digital
-          experiences, marketplace activity, the creator economy, metaverse access,
-          digital assets, events and premium services. Its distribution is fully
-          transparent and verifiable across three public blockchains: Polygon, BNB
-          Smart Chain and Ethereum.
-        </p>
-        <p>
-          This whitepaper presents the architecture, economy, technology stack,
-          roadmap and risk framework of AlArab. It is intended as an institutional
-          reference for partners, developers, creators and community members
-          evaluating the project&apos;s scope and direction.
-        </p>
+        <p>{e.p1}</p>
+        <p>{e.p2}</p>
+        <p>{e.p3}</p>
+        <p>{e.p4}</p>
       </div>
 
       <div className="mt-10 grid sm:grid-cols-3 gap-4">
-        {[
-          { k: "Total Supply", v: "999,000,000", u: "ALA" },
-          { k: "Blockchains", v: "3", u: "Polygon · BSC · ETH" },
-          { k: "Virtual Districts", v: "4", u: "Persistent 3D" },
-        ].map((s) => (
-          <div
-            key={s.k}
-            className="alarab-panel-cyan rounded-xl p-4 text-center"
-          >
+        {e.stats.map((s) => (
+          <div key={s.k} className="alarab-panel-cyan rounded-xl p-4 text-center">
             <div className="text-[10px] uppercase tracking-widest text-alarab-muted mb-1">
               {s.k}
             </div>
@@ -249,61 +190,57 @@ export function ExecutiveSummarySection() {
 
 /* ============================== 03 — VISION & MISSION ============================== */
 export function VisionSection() {
+  const { t } = useLanguage();
+  const v = t.vision;
   return (
     <Section
       id="vision"
       number="03"
-      eyebrow="Vision & Mission"
+      eyebrow={v.eyebrow}
       title={
         <>
-          A digital <span className="text-gradient-gold">ecosystem</span>, not just a
-          platform
+          {v.title.pre} <span className="text-gradient-gold">{v.title.highlight}</span>
+          {v.title.post}
         </>
       }
-      subtitle="AlArab is built on six strategic pillars that together form the operating system of a new digital geography for the Arab world."
+      subtitle={v.subtitle}
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {PILLARS.map((p, i) => (
-          <motion.div
-            key={p.name}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="alarab-panel rounded-xl p-5 hover:alarab-glow-gold transition-all group"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-alarab-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-                <p.icon className="w-5 h-5 text-alarab-gold" />
+        {v.pillars.map((p, i) => {
+          const Icon = PILLAR_ICONS[i] ?? Cpu;
+          return (
+            <motion.div
+              key={p.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="alarab-panel rounded-xl p-5 hover:alarab-glow-gold transition-all group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-alarab-accent flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Icon className="w-5 h-5 text-alarab-gold" />
+                </div>
+                <h3 className="text-lg font-semibold text-alarab-text">{p.name}</h3>
               </div>
-              <h3 className="text-lg font-semibold text-alarab-text">{p.name}</h3>
-            </div>
-            <p className="text-sm text-alarab-muted leading-relaxed">{p.desc}</p>
-          </motion.div>
-        ))}
+              <p className="text-sm text-alarab-muted leading-relaxed">{p.desc}</p>
+            </motion.div>
+          );
+        })}
       </div>
 
       <div className="mt-8 grid md:grid-cols-2 gap-4">
         <div className="alarab-panel-cyan rounded-xl p-5">
           <div className="text-[10px] uppercase tracking-[0.3em] text-alarab-cyan mb-2">
-            Vision
+            {v.visionLabel}
           </div>
-          <p className="text-sm text-alarab-text/85 leading-relaxed">
-            To become the reference digital ecosystem for the Arab world — a
-            programmable geography where citizens, creators and enterprises converge
-            into a persistent, transparent and culturally rooted virtual economy.
-          </p>
+          <p className="text-sm text-alarab-text/85 leading-relaxed">{v.visionText}</p>
         </div>
         <div className="alarab-panel rounded-xl p-5">
           <div className="text-[10px] uppercase tracking-[0.3em] text-alarab-gold mb-2">
-            Mission
+            {v.missionLabel}
           </div>
-          <p className="text-sm text-alarab-text/85 leading-relaxed">
-            To deliver a unified stack — Web, Mobile, VR and AR — that lets any
-            creator or business in the region launch digital experiences, assets and
-            services on-chain, with verifiable transparency and without surrendering
-            cultural identity.
-          </p>
+          <p className="text-sm text-alarab-text/85 leading-relaxed">{v.missionText}</p>
         </div>
       </div>
     </Section>
@@ -312,6 +249,8 @@ export function VisionSection() {
 
 /* ============================== 04 — THE ARAB DIGITAL FUTURE ============================== */
 export function ArabFutureSection() {
+  const { t } = useLanguage();
+  const a = t.arabFuture;
   return (
     <section
       id="arab-future"
@@ -330,32 +269,17 @@ export function ArabFutureSection() {
             </span>
             <div className="h-px w-20 bg-gradient-to-r from-alarab-gold/60 to-transparent" />
             <span className="text-[10px] uppercase tracking-[0.25em] text-alarab-muted">
-              The Ecosystem
+              {a.eyebrow}
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6">
-            The Arab <span className="text-gradient-gold">Digital Future</span>
+            {a.title.pre}{" "}
+            <span className="text-gradient-gold">{a.title.highlight}</span>
           </h2>
           <div className="space-y-5 text-base text-alarab-text/85 leading-relaxed">
-            <p>
-              The Arab world has historically been a crossroads of trade, science and
-              culture. AlArab extends that tradition into the digital era by building
-              a shared, programmable geography where the region&apos;s identity is not
-              erased by global platforms but encoded into the infrastructure itself.
-            </p>
-            <p>
-              Instead of importing a foreign metaverse, AlArab proposes a native
-              digital territory — anchored in Arabic language, heritage and aesthetic
-              — and engineered with the same technologies used by leading global
-              ecosystems: blockchain, AI, real-time 3D and cloud-native
-              infrastructure.
-            </p>
-            <p>
-              The result is a digital future in which citizens, creators and
-              enterprises can build, trade and gather across Web, Mobile, VR and AR,
-              using a transparent on-chain economy and a verifiable digital identity
-              that travels with them across every district.
-            </p>
+            <p>{a.p1}</p>
+            <p>{a.p2}</p>
+            <p>{a.p3}</p>
           </div>
         </motion.div>
 
@@ -368,18 +292,16 @@ export function ArabFutureSection() {
         >
           <Image
             src="/images/hero-city.png"
-            alt="Futuristic Arabian Gulf megacity"
+            alt="AlArab — futuristic Arabian Gulf megacity"
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-alarab-bg via-transparent to-transparent" />
           <div className="absolute bottom-4 left-4 right-4">
             <div className="text-[10px] tracking-[0.3em] uppercase text-alarab-cyan mb-1">
-              Concept Visual
+              {a.visualLabel}
             </div>
-            <div className="text-sm text-alarab-text/90">
-              A native digital territory for the Arab world
-            </div>
+            <div className="text-sm text-alarab-text/90">{a.visualCaption}</div>
           </div>
         </motion.div>
       </div>

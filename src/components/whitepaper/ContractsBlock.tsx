@@ -12,43 +12,50 @@ interface ContractInfo {
   explorerName: string;
   color: string;
   glyph: string;
+  viewOnLabel: string;
+  badge: string;
 }
 
-const CONTRACTS: ContractInfo[] = [
-  {
-    chain: "polygon",
-    chainLabel: "Polygon PoS",
-    address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8",
-    explorerUrl: "https://polygonscan.com/address/0xf5c068f28ebf91b22e52c2ecd230621879e914b8",
+interface Props {
+  contracts: {
+    chain: string;
+    chainLabel: string;
+    address: string;
+  }[];
+  viewOnLabel: string;
+  badge: string;
+}
+
+const CHAIN_META: Record<
+  string,
+  { explorerUrl: (a: string) => string; explorerName: string; color: string; glyph: string }
+> = {
+  polygon: {
+    explorerUrl: (a) => `https://polygonscan.com/address/${a}`,
     explorerName: "PolygonScan",
     color: "#A78BFA",
     glyph: "⬣",
   },
-  {
-    chain: "bsc",
-    chainLabel: "BNB Smart Chain",
-    address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4",
-    explorerUrl: "https://bscscan.com/address/0xbab2556a4db42918a2c833eb2b70fedaf7016de4",
+  bsc: {
+    explorerUrl: (a) => `https://bscscan.com/address/${a}`,
     explorerName: "BscScan",
     color: "#FBBF24",
     glyph: "◆",
   },
-  {
-    chain: "ethereum",
-    chainLabel: "Ethereum",
-    address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358",
-    explorerUrl: "https://etherscan.io/address/0x93617904A0A15063B54bd14cC595AA10f2A8e358",
+  ethereum: {
+    explorerUrl: (a) => `https://etherscan.io/address/${a}`,
     explorerName: "Etherscan",
     color: "#38BDF8",
     glyph: "◇",
   },
-];
+};
 
-export function ContractsBlock() {
+export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
   return (
     <div className="grid md:grid-cols-3 gap-5">
-      {CONTRACTS.map((c, i) => {
-        const shortAddr = `${c.address.slice(0, 6)}…${c.address.slice(-6)}`;
+      {contracts.map((c, i) => {
+        const meta = CHAIN_META[c.chain] ?? CHAIN_META.ethereum;
+        const explorerUrl = meta.explorerUrl(c.address);
         return (
           <motion.div
             key={c.chain}
@@ -58,36 +65,31 @@ export function ContractsBlock() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="alarab-panel rounded-xl p-5 flex flex-col items-center text-center"
           >
-            <div
-              className="w-full flex items-center justify-between mb-4 pb-3 border-b border-white/[0.06]"
-            >
+            <div className="w-full flex items-center justify-between mb-4 pb-3 border-b border-white/[0.06]">
               <div className="flex items-center gap-2">
-                <span
-                  className="text-xl leading-none"
-                  style={{ color: c.color }}
-                >
-                  {c.glyph}
+                <span className="text-xl leading-none" style={{ color: meta.color }}>
+                  {meta.glyph}
                 </span>
                 <span className="text-sm font-semibold">{c.chainLabel}</span>
               </div>
               <span
                 className="text-[9px] uppercase tracking-[0.2em] px-2 py-1 rounded-full"
                 style={{
-                  color: c.color,
-                  backgroundColor: `${c.color}1a`,
-                  border: `1px solid ${c.color}33`,
+                  color: meta.color,
+                  backgroundColor: `${meta.color}1a`,
+                  border: `1px solid ${meta.color}33`,
                 }}
               >
-                Verified
+                {badge}
               </span>
             </div>
 
             <div
               className="p-3 rounded-lg bg-white mb-4"
-              style={{ boxShadow: `0 0 24px ${c.color}33` }}
+              style={{ boxShadow: `0 0 24px ${meta.color}33` }}
             >
               <QRCodeSVG
-                value={c.explorerUrl}
+                value={explorerUrl}
                 size={120}
                 level="M"
                 bgColor="#FFFFFF"
@@ -103,17 +105,17 @@ export function ContractsBlock() {
                 {c.address}
               </div>
               <a
-                href={c.explorerUrl}
+                href={explorerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md transition-all hover:scale-105"
                 style={{
-                  color: c.color,
-                  backgroundColor: `${c.color}14`,
-                  border: `1px solid ${c.color}40`,
+                  color: meta.color,
+                  backgroundColor: `${meta.color}14`,
+                  border: `1px solid ${meta.color}40`,
                 }}
               >
-                View on {c.explorerName}
+                {viewOnLabel} {meta.explorerName}
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>

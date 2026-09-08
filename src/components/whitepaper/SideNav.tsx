@@ -3,44 +3,54 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
+import { useLanguage } from "./i18n/LanguageProvider";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 interface NavItem {
   id: string;
   num: string;
-  label: string;
-  group?: string;
+  labelKey: keyof ReturnType<typeof useLanguage>["t"]["nav"];
+  group: keyof ReturnType<typeof useLanguage>["t"]["navGroups"];
 }
 
 const NAV: NavItem[] = [
-  { id: "cover", num: "00", label: "Cover", group: "Front" },
-  { id: "contents", num: "01", label: "Contents", group: "Front" },
-  { id: "executive-summary", num: "02", label: "Executive Summary", group: "Front" },
-  { id: "vision", num: "03", label: "Vision & Mission", group: "Ecosystem" },
-  { id: "arab-future", num: "04", label: "Arab Digital Future", group: "Ecosystem" },
-  { id: "metaverse", num: "05", label: "AlArab Metaverse", group: "Ecosystem" },
-  { id: "districts", num: "06", label: "Four Digital Districts", group: "Ecosystem" },
-  { id: "persistent-world", num: "07", label: "Persistent Virtual World", group: "Ecosystem" },
-  { id: "architecture", num: "08", label: "Ecosystem Architecture", group: "Technology" },
-  { id: "digital-economy", num: "09", label: "Digital Economy", group: "Technology" },
-  { id: "blockchain", num: "10", label: "Blockchain & Smart Contracts", group: "Technology" },
-  { id: "ai-stack", num: "11", label: "AI + Blockchain + VR + Cloud", group: "Technology" },
-  { id: "ala-intro", num: "12", label: "ALA — Digital Asset", group: "Token" },
-  { id: "what-is-ala", num: "13", label: "What is ALA?", group: "Token" },
-  { id: "ala-utility", num: "14", label: "ALA Utility", group: "Token" },
-  { id: "tokenomics", num: "15", label: "Tokenomics", group: "Token" },
-  { id: "creator-economy", num: "16", label: "Creator Economy", group: "Assets" },
-  { id: "digital-assets", num: "17", label: "Digital Assets & NFTs", group: "Assets" },
-  { id: "verticals", num: "18", label: "Eight Industry Verticals", group: "Assets" },
-  { id: "roadmap", num: "19", label: "Roadmap", group: "Project" },
-  { id: "partnerships", num: "20", label: "Strategic Partnerships", group: "Project" },
-  { id: "transparency", num: "21", label: "Transparency & Contracts", group: "Project" },
-  { id: "risk", num: "22", label: "Risk & Compliance", group: "Project" },
-  { id: "conclusion", num: "23", label: "Conclusion", group: "Project" },
+  { id: "cover", num: "00", labelKey: "cover", group: "front" },
+  { id: "contents", num: "01", labelKey: "contents", group: "front" },
+  { id: "executive-summary", num: "02", labelKey: "executiveSummary", group: "front" },
+  { id: "vision", num: "03", labelKey: "vision", group: "ecosystem" },
+  { id: "arab-future", num: "04", labelKey: "arabFuture", group: "ecosystem" },
+  { id: "metaverse", num: "05", labelKey: "metaverse", group: "ecosystem" },
+  { id: "districts", num: "06", labelKey: "districts", group: "ecosystem" },
+  { id: "persistent-world", num: "07", labelKey: "persistentWorld", group: "ecosystem" },
+  { id: "architecture", num: "08", labelKey: "architecture", group: "technology" },
+  { id: "digital-economy", num: "09", labelKey: "digitalEconomy", group: "technology" },
+  { id: "blockchain", num: "10", labelKey: "blockchain", group: "technology" },
+  { id: "ai-stack", num: "11", labelKey: "aiStack", group: "technology" },
+  { id: "ala-intro", num: "12", labelKey: "alaIntro", group: "token" },
+  { id: "what-is-ala", num: "13", labelKey: "whatIsAla", group: "token" },
+  { id: "ala-utility", num: "14", labelKey: "alaUtility", group: "token" },
+  { id: "tokenomics", num: "15", labelKey: "tokenomics", group: "token" },
+  { id: "creator-economy", num: "16", labelKey: "creatorEconomy", group: "assets" },
+  { id: "digital-assets", num: "17", labelKey: "digitalAssets", group: "assets" },
+  { id: "verticals", num: "18", labelKey: "verticals", group: "assets" },
+  { id: "roadmap", num: "19", labelKey: "roadmap", group: "project" },
+  { id: "partnerships", num: "20", labelKey: "partnerships", group: "project" },
+  { id: "transparency", num: "21", labelKey: "transparency", group: "project" },
+  { id: "risk", num: "22", labelKey: "risk", group: "project" },
+  { id: "conclusion", num: "23", labelKey: "conclusion", group: "project" },
 ];
 
-const GROUPS = ["Front", "Ecosystem", "Technology", "Token", "Assets", "Project"];
+const GROUPS: NavItem["group"][] = [
+  "front",
+  "ecosystem",
+  "technology",
+  "token",
+  "assets",
+  "project",
+];
 
 export function SideNav() {
+  const { t } = useLanguage();
   const [active, setActive] = useState<string>("cover");
   const [open, setOpen] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -51,7 +61,6 @@ export function SideNav() {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
 
-      // Find active section
       const offset = window.innerHeight * 0.35;
       let current = "cover";
       for (const item of NAV) {
@@ -97,24 +106,24 @@ export function SideNav() {
           className="px-6 py-7 border-b border-alarab-line text-left group"
         >
           <div className="text-[10px] tracking-[0.3em] text-alarab-muted uppercase mb-1">
-            Whitepaper · 2026
+            {t.meta.edition} · 2026
           </div>
           <div className="text-xl font-bold text-gradient-gold leading-tight">
-            AL ARAB
+            {t.meta.siteName}
           </div>
           <div className="text-[11px] text-alarab-cyan/80 mt-1 tracking-wide">
-            The Digital Future of the Arab World
+            {t.meta.tagline}
           </div>
         </button>
 
-        <nav className="flex-1 overflow-y-auto py-4 px-3 max-h-[calc(100vh-220px)]">
+        <nav className="flex-1 overflow-y-auto py-4 px-3 max-h-[calc(100vh-260px)]">
           {GROUPS.map((group) => {
             const items = NAV.filter((n) => n.group === group);
             if (!items.length) return null;
             return (
               <div key={group} className="mb-4">
                 <div className="px-3 mb-1 text-[9px] uppercase tracking-[0.3em] text-alarab-muted/70">
-                  {group}
+                  {t.navGroups[group]}
                 </div>
                 {items.map((item) => {
                   const isActive = active === item.id;
@@ -135,7 +144,9 @@ export function SideNav() {
                       >
                         {item.num}
                       </span>
-                      <span className="text-[12px] leading-tight">{item.label}</span>
+                      <span className="text-[12px] leading-tight">
+                        {t.nav[item.labelKey]}
+                      </span>
                     </button>
                   );
                 })}
@@ -144,17 +155,18 @@ export function SideNav() {
           })}
         </nav>
 
-        <div className="border-t border-alarab-line p-4">
+        <div className="border-t border-alarab-line p-3 space-y-2">
+          <LanguageSwitcher variant="sidebar" />
           <a
             href="#cover"
             onClick={(e) => {
               e.preventDefault();
               scrollTo("cover");
             }}
-            className="flex items-center justify-center gap-2 text-[11px] text-alarab-muted hover:text-alarab-gold transition-colors"
+            className="flex items-center justify-center gap-2 text-[11px] text-alarab-muted hover:text-alarab-gold transition-colors py-1"
           >
             <Download className="w-3 h-3" />
-            Back to top
+            {t.meta.backToTop}
           </a>
         </div>
       </aside>
@@ -166,16 +178,21 @@ export function SideNav() {
             onClick={() => scrollTo("cover")}
             className="flex items-center gap-2"
           >
-            <span className="text-sm font-bold text-gradient-gold">AL ARAB</span>
-            <span className="text-[10px] text-alarab-muted">Whitepaper</span>
+            <span className="text-sm font-bold text-gradient-gold">
+              {t.meta.siteName}
+            </span>
+            <span className="text-[10px] text-alarab-muted">{t.meta.edition}</span>
           </button>
-          <button
-            onClick={() => setOpen(!open)}
-            className="p-2 text-alarab-gold"
-            aria-label="Toggle navigation"
-          >
-            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher variant="topbar" />
+            <button
+              onClick={() => setOpen(!open)}
+              className="p-2 text-alarab-gold"
+              aria-label={t.meta.toggleNav}
+            >
+              {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -194,7 +211,7 @@ export function SideNav() {
                 return (
                   <div key={group} className="mb-6">
                     <div className="px-3 mb-2 text-[10px] uppercase tracking-[0.3em] text-alarab-muted/70">
-                      {group}
+                      {t.navGroups[group]}
                     </div>
                     {items.map((item) => {
                       const isActive = active === item.id;
@@ -211,7 +228,7 @@ export function SideNav() {
                           <span className="text-[10px] font-mono text-alarab-gold/70">
                             {item.num}
                           </span>
-                          <span className="text-sm">{item.label}</span>
+                          <span className="text-sm">{t.nav[item.labelKey]}</span>
                         </button>
                       );
                     })}
