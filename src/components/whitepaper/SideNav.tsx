@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
+import Image from "next/image";
 import { useLanguage } from "./i18n/LanguageProvider";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -103,15 +104,21 @@ export function SideNav() {
       <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-[260px] z-40 flex-col bg-alarab-bg/80 backdrop-blur-xl border-r border-alarab-line">
         <button
           onClick={() => scrollTo("cover")}
-          className="px-6 py-7 border-b border-alarab-line text-left group"
+          className="px-5 py-5 border-b border-alarab-line text-left group hover:bg-white/[0.02] transition-colors"
         >
-          <div className="text-[10px] tracking-[0.3em] text-alarab-muted uppercase mb-1">
+          <div className="text-[9px] tracking-[0.3em] text-alarab-muted uppercase mb-2">
             {t.meta.edition} · 2026
           </div>
-          <div className="text-xl font-bold text-gradient-gold leading-tight">
-            {t.meta.siteName}
+          <div className="relative w-[180px] h-[65px] mb-2">
+            <Image
+              src="/images/alarab-logo-sidebar.png"
+              alt="AlArab — Official Logo"
+              fill
+              className="object-contain object-left"
+              priority
+            />
           </div>
-          <div className="text-[11px] text-alarab-cyan/80 mt-1 tracking-wide">
+          <div className="text-[10px] text-alarab-cyan/80 tracking-wide leading-tight">
             {t.meta.tagline}
           </div>
         </button>
@@ -177,11 +184,17 @@ export function SideNav() {
           <button
             onClick={() => scrollTo("cover")}
             className="flex items-center gap-2"
+            aria-label={t.meta.siteName}
           >
-            <span className="text-sm font-bold text-gradient-gold">
-              {t.meta.siteName}
-            </span>
-            <span className="text-[10px] text-alarab-muted">{t.meta.edition}</span>
+            <div className="relative w-[120px] h-[44px]">
+              <Image
+                src="/images/alarab-logo-mobile.png"
+                alt="AlArab — Official Logo"
+                fill
+                className="object-contain object-left"
+                priority
+              />
+            </div>
           </button>
           <div className="flex items-center gap-2">
             <LanguageSwitcher variant="topbar" />

@@ -32,7 +32,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "AlArab" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/images/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
     title: "AlArab — The Digital Future of the Arab World",
@@ -56,6 +60,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/images/favicon-16.png" sizes="16x16" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >

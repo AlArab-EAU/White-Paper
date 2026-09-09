@@ -54,14 +54,23 @@ export function CoverSection() {
           </span>
         </motion.div>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.95]"
+          className="flex justify-center mb-2"
         >
-          <span className="text-gradient-gold">{t.cover.title}</span>
-        </motion.h1>
+          <div className="relative w-[280px] h-[100px] sm:w-[400px] sm:h-[145px] md:w-[520px] md:h-[190px] lg:w-[640px] lg:h-[230px]">
+            <Image
+              src="/images/alarab-logo-hero.png"
+              alt="AlArab — Official Logo"
+              fill
+              priority
+              className="object-contain"
+              sizes="(max-width: 640px) 280px, (max-width: 768px) 400px, (max-width: 1024px) 520px, 640px"
+            />
+          </div>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 18 }}

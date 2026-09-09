@@ -9,6 +9,7 @@ import {
   Globe2,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 import { Section } from "../Section";
 import { ContractsBlock } from "../ContractsBlock";
 import { useLanguage } from "../i18n/LanguageProvider";
@@ -269,8 +270,16 @@ export function ConclusionSection() {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="mt-16 pt-8 border-t border-alarab-line"
         >
-          <div className="text-2xl font-bold text-gradient-gold mb-2">
-            {t.meta.siteName}
+          <div className="flex justify-center mb-4">
+            <div className="relative w-[200px] h-[73px] sm:w-[260px] sm:h-[95px]">
+              <Image
+                src="/images/alarab-logo-sidebar.png"
+                alt="AlArab — Official Logo"
+                fill
+                className="object-contain"
+                sizes="(max-width: 640px) 200px, 260px"
+              />
+            </div>
           </div>
           <div className="text-xs text-alarab-muted tracking-widest">{c.edition}</div>
           <div className="mt-4 text-[10px] text-alarab-muted/60 max-w-2xl mx-auto leading-relaxed">
