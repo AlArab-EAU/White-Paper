@@ -59,12 +59,39 @@ export function AlaIntroSection() {
           </span>
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, scale: 0.7, rotate: -10 }}
+          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
+          className="flex justify-center mb-8"
+        >
+          <div className="relative w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] md:w-[340px] md:h-[340px]">
+            {/* Glow halo behind the coin */}
+            <div
+              className="absolute inset-0 rounded-full blur-3xl opacity-60"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(229,185,88,0.4) 0%, rgba(229,185,88,0.1) 50%, transparent 70%)",
+              }}
+            />
+            <Image
+              src="/images/ala-coin-hero.png"
+              alt="ALA — AlArab Digital Ecosystem Asset coin"
+              fill
+              priority
+              className="object-contain drop-shadow-2xl relative z-10"
+              sizes="(max-width: 640px) 200px, (max-width: 768px) 280px, 340px"
+            />
+          </div>
+        </motion.div>
+
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9, delay: 0.1 }}
-          className="text-7xl sm:text-8xl md:text-9xl font-bold tracking-tighter mb-2"
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-2"
         >
           <span className="text-gradient-gold">{a.name}</span>
         </motion.h2>
@@ -73,7 +100,7 @@ export function AlaIntroSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9, delay: 0.3 }}
+          transition={{ duration: 0.9, delay: 0.35 }}
           className="text-base sm:text-lg text-alarab-cyan/80 tracking-[0.2em] uppercase mb-10"
         >
           {a.role}
@@ -119,7 +146,35 @@ export function WhatIsAlaSection() {
       }
       subtitle={w.subtitle}
     >
-      <div className="grid md:grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-[auto_1fr_1fr] gap-5 items-stretch">
+        {/* Coin visual */}
+        <div className="alarab-panel rounded-xl p-6 flex flex-col items-center justify-center min-w-[200px]">
+          <div className="relative w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] mb-3">
+            <div
+              className="absolute inset-0 rounded-full blur-2xl opacity-50"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(229,185,88,0.4) 0%, transparent 70%)",
+              }}
+            />
+            <Image
+              src="/images/ala-coin-medium.png"
+              alt="ALA coin"
+              fill
+              className="object-contain relative z-10"
+              sizes="(max-width: 768px) 180px, 200px"
+            />
+          </div>
+          <div className="text-center relative z-10">
+            <div className="text-xs uppercase tracking-[0.3em] text-alarab-muted">
+              ALA
+            </div>
+            <div className="text-[10px] text-alarab-cyan mt-1">
+              AlArab Digital Asset
+            </div>
+          </div>
+        </div>
+
         <div className="alarab-panel rounded-xl p-6">
           <div className="text-[10px] uppercase tracking-[0.3em] text-alarab-muted mb-3">
             {w.supplyLabel}

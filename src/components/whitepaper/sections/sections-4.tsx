@@ -220,6 +220,31 @@ export function ConclusionSection() {
         </motion.p>
 
         <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, delay: 0.4 }}
+          className="flex justify-center mb-10"
+        >
+          <div className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px]">
+            <div
+              className="absolute inset-0 rounded-full blur-2xl opacity-40"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(229,185,88,0.5) 0%, transparent 70%)",
+              }}
+            />
+            <Image
+              src="/images/ala-coin-medium.png"
+              alt="ALA — AlArab Digital Ecosystem Asset"
+              fill
+              className="object-contain relative z-10 drop-shadow-xl"
+              sizes="(max-width: 640px) 140px, 160px"
+            />
+          </div>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
