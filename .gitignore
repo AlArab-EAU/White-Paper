@@ -36,7 +36,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
@@ -46,9 +45,41 @@ local-*
 *.log
 dev.log
 dev.out.log
+server.log
 test
 prompt
 
-server.log
+# Local dev scripts & screenshots (not part of the whitepaper source)
+/scripts/
+
+# Z.ai sandbox internal
+/.zscripts/
+
+# Local SQLite database (sandbox only)
+/db/
+/prisma/*.db
+/prisma/*.db-journal
+
+# Sandbox tool-results (internal CLI artifacts)
+/tool-results/
+
+# Tests directory (sandbox bootstrap scripts)
+/tests/
+
 # Skills directory
 /skills/
+
+# Examples (sandbox demos, not part of the whitepaper)
+/examples/
+
+# Mini-services (sandbox demos)
+/mini-services/
+
+# Caddyfile (sandbox reverse proxy config)
+/Caddyfile
+
+# Upload directory (user-supplied source files)
+/upload/
+
+# Download directory (local deliverables)
+/download/
