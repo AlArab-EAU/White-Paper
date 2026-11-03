@@ -155,29 +155,31 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
               </div>
             ) : isPreLaunch ? (
               <div
-                className="p-3 rounded-lg mb-4 bg-white/[0.04] flex flex-col items-center justify-center"
+                className="rounded-xl mb-5 flex flex-col items-center justify-center py-8 px-6"
                 style={{
-                  boxShadow: `0 0 24px ${badgeColor}33`,
-                  border: `1px solid ${badgeColor}40`,
+                  background:
+                    "radial-gradient(ellipse at center, rgba(251,191,36,0.10) 0%, rgba(0,0,0,0) 70%)",
+                  border: `1px solid ${badgeColor}33`,
                 }}
               >
-                <div className="relative w-[120px] h-[120px] flex items-center justify-center">
-                  {/* Glow halo */}
-                  <div
-                    className="absolute inset-0 rounded-full blur-2xl opacity-50"
-                    style={{
-                      background: `radial-gradient(circle, ${badgeColor}55 0%, transparent 70%)`,
-                    }}
-                  />
+                {/* Glow halo behind the logo */}
+                <div
+                  className="absolute inset-x-8 top-8 bottom-8 rounded-full blur-3xl opacity-40 pointer-events-none"
+                  style={{
+                    background: `radial-gradient(circle, ${badgeColor}55 0%, transparent 70%)`,
+                  }}
+                />
+                {/* Lbank logo — clean, generous horizontal padding */}
+                <div className="relative w-[200px] h-[48px] mb-4 z-10">
                   <Image
                     src="/images/lbank-logo-card.png"
                     alt="Lbank Exchange Logo"
                     fill
-                    className="object-contain relative z-10"
-                    sizes="120px"
+                    className="object-contain"
+                    sizes="200px"
                   />
                 </div>
-                <div className="mt-2 text-[10px] uppercase tracking-[0.25em] text-alarab-gold">
+                <div className="text-[10px] uppercase tracking-[0.35em] text-alarab-gold/90 z-10">
                   Coming Soon
                 </div>
               </div>
