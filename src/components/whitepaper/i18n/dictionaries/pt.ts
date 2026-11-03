@@ -524,7 +524,7 @@ export const pt: Dictionary = {
     contracts: [
       { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "Em Restruturação", badgeType: "restructuring" },
       { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "Em Restruturação", badgeType: "restructuring" },
-      { chain: "bsc", chainLabel: "Negociação Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "Verificado", badgeType: "verified" },
+      { chain: "bsc", chainLabel: "Negociação Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "Pré-lançamento Lbank", badgeType: "pre-launch" },
     ],
     badge: "Verificado",
     values: [

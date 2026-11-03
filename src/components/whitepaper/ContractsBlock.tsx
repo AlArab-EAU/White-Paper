@@ -2,7 +2,8 @@
 
 import { QRCodeSVG } from "qrcode.react";
 import { motion } from "framer-motion";
-import { ExternalLink, AlertTriangle, ShieldCheck } from "lucide-react";
+import { ExternalLink, AlertTriangle, ShieldCheck, Rocket } from "lucide-react";
+import Image from "next/image";
 
 interface ChainMeta {
   explorerUrl: (a: string) => string;
@@ -16,7 +17,7 @@ interface ContractEntry {
   chainLabel: string;
   address: string;
   badge: string;
-  badgeType: "verified" | "restructuring";
+  badgeType: "verified" | "restructuring" | "pre-launch";
 }
 
 interface Props {
@@ -53,8 +54,24 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
         const meta = CHAIN_META[c.chain] ?? CHAIN_META.ethereum;
         const explorerUrl = meta.explorerUrl(c.address);
         const isRestructuring = c.badgeType === "restructuring";
-        const badgeColor = isRestructuring ? "#F97316" : meta.color;
-        const BadgeIcon = isRestructuring ? AlertTriangle : ShieldCheck;
+        const isPreLaunch = c.badgeType === "pre-launch";
+
+        // Color logic by badgeType
+        const badgeColor = isRestructuring
+          ? "#F97316" // orange
+          : isPreLaunch
+          ? "#FBBF24" // gold/amber (Lbank brand)
+          : meta.color;
+
+        const BadgeIcon = isRestructuring
+          ? AlertTriangle
+          : isPreLaunch
+          ? Rocket
+          : ShieldCheck;
+
+        // For pre-launch (Lbank) cards, hide the BNB/BscScan reference
+        const showExplorerName = !isPreLaunch;
+
         return (
           <motion.div
             key={c.chain}
@@ -66,7 +83,12 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
             style={{
               borderColor: isRestructuring
                 ? `${badgeColor}40`
+                : isPreLaunch
+                ? `${badgeColor}55`
                 : `${meta.color}33`,
+              boxShadow: isPreLaunch
+                ? `0 0 0 1px ${badgeColor}40, 0 18px 60px -20px ${badgeColor}55`
+                : undefined,
             }}
           >
             <div className="w-full flex flex-col gap-3 mb-4 pb-3 border-b border-white/[0.06]">
@@ -82,13 +104,16 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
                     <div className="text-sm font-semibold leading-tight">
                       {c.chainLabel}
                     </div>
-                    <div className="text-[10px] text-alarab-muted mt-0.5 font-mono">
-                      {c.chain === "polygon"
-                        ? "PolygonScan"
-                        : c.chain === "ethereum"
-                        ? "Etherscan"
-                        : "BscScan"}
-                    </div>
+                    {showExplorerName && (
+                      <div className="text-[10px] text-alarab-muted mt-0.5 font-mono">
+                        {meta.explorerName}
+                      </div>
+                    )}
+                    {isPreLaunch && (
+                      <div className="text-[10px] text-alarab-gold/80 mt-0.5 font-mono tracking-widest uppercase">
+                        Exchange Listing
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -105,17 +130,14 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
               </span>
             </div>
 
-            <div
-              className={`p-3 rounded-lg mb-4 ${
-                isRestructuring ? "bg-white/[0.04]" : "bg-white"
-              }`}
-              style={{
-                boxShadow: isRestructuring
-                  ? `0 0 24px ${badgeColor}22`
-                  : `0 0 24px ${meta.color}33`,
-              }}
-            >
-              {isRestructuring ? (
+            {/* Body: QR / Warning / Lbank logo */}
+            {isRestructuring ? (
+              <div
+                className="p-3 rounded-lg mb-4 bg-white/[0.04]"
+                style={{
+                  boxShadow: `0 0 24px ${badgeColor}22`,
+                }}
+              >
                 <div className="w-[120px] h-[120px] flex items-center justify-center">
                   <div className="flex flex-col items-center gap-2">
                     <AlertTriangle
@@ -130,7 +152,42 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
                     </span>
                   </div>
                 </div>
-              ) : (
+              </div>
+            ) : isPreLaunch ? (
+              <div
+                className="p-3 rounded-lg mb-4 bg-white/[0.04] flex flex-col items-center justify-center"
+                style={{
+                  boxShadow: `0 0 24px ${badgeColor}33`,
+                  border: `1px solid ${badgeColor}40`,
+                }}
+              >
+                <div className="relative w-[120px] h-[120px] flex items-center justify-center">
+                  {/* Glow halo */}
+                  <div
+                    className="absolute inset-0 rounded-full blur-2xl opacity-50"
+                    style={{
+                      background: `radial-gradient(circle, ${badgeColor}55 0%, transparent 70%)`,
+                    }}
+                  />
+                  <Image
+                    src="/images/lbank-logo-card.png"
+                    alt="Lbank Exchange Logo"
+                    fill
+                    className="object-contain relative z-10"
+                    sizes="120px"
+                  />
+                </div>
+                <div className="mt-2 text-[10px] uppercase tracking-[0.25em] text-alarab-gold">
+                  Coming Soon
+                </div>
+              </div>
+            ) : (
+              <div
+                className="p-3 rounded-lg mb-4 bg-white"
+                style={{
+                  boxShadow: `0 0 24px ${meta.color}33`,
+                }}
+              >
                 <QRCodeSVG
                   value={explorerUrl}
                   size={120}
@@ -138,8 +195,8 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
                   bgColor="#FFFFFF"
                   fgColor="#040917"
                 />
-              )}
-            </div>
+              </div>
+            )}
 
             <div className="w-full">
               <div className="text-[9px] uppercase tracking-[0.2em] text-alarab-muted mb-1">
@@ -148,6 +205,7 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
               <div className="text-[11px] font-mono text-alarab-text break-all leading-relaxed">
                 {c.address}
               </div>
+
               {isRestructuring ? (
                 <div
                   className="mt-4 inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md"
@@ -160,6 +218,22 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
                   <AlertTriangle className="w-3 h-3" />
                   Address frozen during restructuring
                 </div>
+              ) : isPreLaunch ? (
+                <a
+                  href="https://www.lbank.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md transition-all hover:scale-105"
+                  style={{
+                    color: badgeColor,
+                    backgroundColor: `${badgeColor}14`,
+                    border: `1px solid ${badgeColor}40`,
+                  }}
+                >
+                  <Rocket className="w-3 h-3" />
+                  Listing on Lbank
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               ) : (
                 <a
                   href={explorerUrl}

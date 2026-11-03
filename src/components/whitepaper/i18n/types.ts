@@ -269,7 +269,7 @@ export interface Dictionary {
       chainLabel: string;
       address: string;
       badge: string;
-      badgeType: "verified" | "restructuring";
+      badgeType: "verified" | "restructuring" | "pre-launch";
     }[];
     badge: string;
     values: { t: string; d: string }[];
