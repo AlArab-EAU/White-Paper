@@ -265,7 +265,7 @@ export const zh: Dictionary = {
     chains: [
       { name: "Polygon", status: "已验证" },
       { name: "Eth", status: "已验证" },
-      { name: "BNB Lbank", status: "已验证" },
+      { name: "交易 Lbank", status: "已验证" },
     ],
   },
 
@@ -314,7 +314,7 @@ export const zh: Dictionary = {
     chainRows: [
       { c: "Polygon", a: "0xf5c068…914b8" },
       { c: "Eth", a: "0x936179…8e358" },
-      { c: "BNB Lbank", a: "0xbab255…16de4" },
+      { c: "交易 Lbank", a: "0xbab255…16de4" },
     ],
     notePrefix: "完整地址与二维码详见",
     noteLink: "透明度",
@@ -524,7 +524,7 @@ export const zh: Dictionary = {
     contracts: [
       { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "重组中", badgeType: "restructuring" },
       { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "重组中", badgeType: "restructuring" },
-      { chain: "bsc", chainLabel: "BNB 交易 Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "已验证", badgeType: "verified" },
+      { chain: "bsc", chainLabel: "交易 Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "已验证", badgeType: "verified" },
     ],
     badge: "已验证",
     values: [

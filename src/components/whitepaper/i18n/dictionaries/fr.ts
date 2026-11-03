@@ -265,7 +265,7 @@ export const fr: Dictionary = {
     chains: [
       { name: "Polygon", status: "Vérifié" },
       { name: "Eth", status: "Vérifié" },
-      { name: "BNB Lbank", status: "Vérifié" },
+      { name: "Négociation Lbank", status: "Vérifié" },
     ],
   },
 
@@ -314,7 +314,7 @@ export const fr: Dictionary = {
     chainRows: [
       { c: "Polygon", a: "0xf5c068…914b8" },
       { c: "Eth", a: "0x936179…8e358" },
-      { c: "BNB Lbank", a: "0xbab255…16de4" },
+      { c: "Négociation Lbank", a: "0xbab255…16de4" },
     ],
     notePrefix: "Les adresses complètes et les codes QR figurent dans la section",
     noteLink: "Transparence",
@@ -524,7 +524,7 @@ export const fr: Dictionary = {
     contracts: [
       { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "Restructuration", badgeType: "restructuring" },
       { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "Restructuration", badgeType: "restructuring" },
-      { chain: "bsc", chainLabel: "BNB Négociation Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "Vérifié", badgeType: "verified" },
+      { chain: "bsc", chainLabel: "Négociation Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "Vérifié", badgeType: "verified" },
     ],
     badge: "Vérifié",
     values: [
