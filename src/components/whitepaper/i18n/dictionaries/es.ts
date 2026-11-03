@@ -264,8 +264,8 @@ export const es: Dictionary = {
     p3: "Los contratos inteligentes gobiernan el mint de activos digitales, el depósito del marketplace, la distribución de regalías, la emisión de entradas y el control de acceso. Cada transacción es públicamente verificable a través del explorador de la blockchain correspondiente.",
     chains: [
       { name: "Polygon", status: "Verificado" },
-      { name: "BSC", status: "Verificado" },
-      { name: "Ethereum", status: "Verificado" },
+      { name: "Eth", status: "Verificado" },
+      { name: "BNB Lbank", status: "Verificado" },
     ],
   },
 
@@ -313,8 +313,8 @@ export const es: Dictionary = {
     chainsLabel: "Despliegue Multichain",
     chainRows: [
       { c: "Polygon", a: "0xf5c068…914b8" },
-      { c: "BSC", a: "0xbab255…16de4" },
-      { c: "Ethereum", a: "0x936179…8e358" },
+      { c: "Eth", a: "0x936179…8e358" },
+      { c: "BNB Lbank", a: "0xbab255…16de4" },
     ],
     notePrefix: "Las direcciones completas y los códigos QR están en la sección de",
     noteLink: "Transparencia",
@@ -522,9 +522,9 @@ export const es: Dictionary = {
     subtitle:
       "Cada contrato inteligente de ALA está desplegado en tres blockchains públicas. Las direcciones son verificables a través de los exploradores oficiales. Escanea los códigos QR o abre el explorador directamente.",
     contracts: [
-      { chain: "polygon", chainLabel: "Polygon PoS", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8" },
-      { chain: "bsc", chainLabel: "BNB Smart Chain", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4" },
-      { chain: "ethereum", chainLabel: "Ethereum", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358" },
+      { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "En Reestructuración", badgeType: "restructuring" },
+      { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "En Reestructuración", badgeType: "restructuring" },
+      { chain: "bsc", chainLabel: "BNB Negociación Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "Verificado", badgeType: "verified" },
     ],
     badge: "Verificado",
     values: [

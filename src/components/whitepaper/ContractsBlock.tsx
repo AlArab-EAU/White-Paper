@@ -2,34 +2,30 @@
 
 import { QRCodeSVG } from "qrcode.react";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, AlertTriangle, ShieldCheck } from "lucide-react";
 
-interface ContractInfo {
-  chain: string;
-  chainLabel: string;
-  address: string;
-  explorerUrl: string;
+interface ChainMeta {
+  explorerUrl: (a: string) => string;
   explorerName: string;
   color: string;
   glyph: string;
-  viewOnLabel: string;
+}
+
+interface ContractEntry {
+  chain: string;
+  chainLabel: string;
+  address: string;
   badge: string;
+  badgeType: "verified" | "restructuring";
 }
 
 interface Props {
-  contracts: {
-    chain: string;
-    chainLabel: string;
-    address: string;
-  }[];
+  contracts: ContractEntry[];
   viewOnLabel: string;
   badge: string;
 }
 
-const CHAIN_META: Record<
-  string,
-  { explorerUrl: (a: string) => string; explorerName: string; color: string; glyph: string }
-> = {
+const CHAIN_META: Record<string, ChainMeta> = {
   polygon: {
     explorerUrl: (a) => `https://polygonscan.com/address/${a}`,
     explorerName: "PolygonScan",
@@ -56,6 +52,9 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
       {contracts.map((c, i) => {
         const meta = CHAIN_META[c.chain] ?? CHAIN_META.ethereum;
         const explorerUrl = meta.explorerUrl(c.address);
+        const isRestructuring = c.badgeType === "restructuring";
+        const badgeColor = isRestructuring ? "#F97316" : meta.color;
+        const BadgeIcon = isRestructuring ? AlertTriangle : ShieldCheck;
         return (
           <motion.div
             key={c.chain}
@@ -64,37 +63,82 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="alarab-panel rounded-xl p-5 flex flex-col items-center text-center"
+            style={{
+              borderColor: isRestructuring
+                ? `${badgeColor}40`
+                : `${meta.color}33`,
+            }}
           >
-            <div className="w-full flex items-center justify-between mb-4 pb-3 border-b border-white/[0.06]">
-              <div className="flex items-center gap-2">
-                <span className="text-xl leading-none" style={{ color: meta.color }}>
-                  {meta.glyph}
-                </span>
-                <span className="text-sm font-semibold">{c.chainLabel}</span>
+            <div className="w-full flex flex-col gap-3 mb-4 pb-3 border-b border-white/[0.06]">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-start gap-2 min-w-0 flex-1">
+                  <span
+                    className="text-xl leading-none shrink-0 mt-0.5"
+                    style={{ color: meta.color }}
+                  >
+                    {meta.glyph}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-sm font-semibold leading-tight">
+                      {c.chainLabel}
+                    </div>
+                    <div className="text-[10px] text-alarab-muted mt-0.5 font-mono">
+                      {c.chain === "polygon"
+                        ? "PolygonScan"
+                        : c.chain === "ethereum"
+                        ? "Etherscan"
+                        : "BscScan"}
+                    </div>
+                  </div>
+                </div>
               </div>
               <span
-                className="text-[9px] uppercase tracking-[0.2em] px-2 py-1 rounded-full"
+                className="self-start inline-flex items-center gap-1 text-[9px] uppercase tracking-[0.15em] px-2 py-1 rounded-full leading-tight"
                 style={{
-                  color: meta.color,
-                  backgroundColor: `${meta.color}1a`,
-                  border: `1px solid ${meta.color}33`,
+                  color: badgeColor,
+                  backgroundColor: `${badgeColor}1a`,
+                  border: `1px solid ${badgeColor}40`,
                 }}
               >
-                {badge}
+                <BadgeIcon className="w-2.5 h-2.5" />
+                {c.badge}
               </span>
             </div>
 
             <div
-              className="p-3 rounded-lg bg-white mb-4"
-              style={{ boxShadow: `0 0 24px ${meta.color}33` }}
+              className={`p-3 rounded-lg mb-4 ${
+                isRestructuring ? "bg-white/[0.04]" : "bg-white"
+              }`}
+              style={{
+                boxShadow: isRestructuring
+                  ? `0 0 24px ${badgeColor}22`
+                  : `0 0 24px ${meta.color}33`,
+              }}
             >
-              <QRCodeSVG
-                value={explorerUrl}
-                size={120}
-                level="M"
-                bgColor="#FFFFFF"
-                fgColor="#040917"
-              />
+              {isRestructuring ? (
+                <div className="w-[120px] h-[120px] flex items-center justify-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <AlertTriangle
+                      className="w-10 h-10"
+                      style={{ color: badgeColor }}
+                    />
+                    <span
+                      className="text-[9px] uppercase tracking-[0.25em]"
+                      style={{ color: badgeColor }}
+                    >
+                      {c.badge}
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <QRCodeSVG
+                  value={explorerUrl}
+                  size={120}
+                  level="M"
+                  bgColor="#FFFFFF"
+                  fgColor="#040917"
+                />
+              )}
             </div>
 
             <div className="w-full">
@@ -104,20 +148,34 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
               <div className="text-[11px] font-mono text-alarab-text break-all leading-relaxed">
                 {c.address}
               </div>
-              <a
-                href={explorerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md transition-all hover:scale-105"
-                style={{
-                  color: meta.color,
-                  backgroundColor: `${meta.color}14`,
-                  border: `1px solid ${meta.color}40`,
-                }}
-              >
-                {viewOnLabel} {meta.explorerName}
-                <ExternalLink className="w-3 h-3" />
-              </a>
+              {isRestructuring ? (
+                <div
+                  className="mt-4 inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md"
+                  style={{
+                    color: badgeColor,
+                    backgroundColor: `${badgeColor}10`,
+                    border: `1px solid ${badgeColor}33`,
+                  }}
+                >
+                  <AlertTriangle className="w-3 h-3" />
+                  Address frozen during restructuring
+                </div>
+              ) : (
+                <a
+                  href={explorerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md transition-all hover:scale-105"
+                  style={{
+                    color: meta.color,
+                    backgroundColor: `${meta.color}14`,
+                    border: `1px solid ${meta.color}40`,
+                  }}
+                >
+                  {viewOnLabel} {meta.explorerName}
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
             </div>
           </motion.div>
         );

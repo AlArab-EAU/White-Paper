@@ -264,8 +264,8 @@ export const fr: Dictionary = {
     p3: "Les contrats intelligents régissent le mint des actifs numériques, le séquestre du marketplace, la distribution des redevances, l'émission de billets et le contrôle d'accès. Chaque transaction est publiquement vérifiable via l'explorateur de la blockchain correspondante.",
     chains: [
       { name: "Polygon", status: "Vérifié" },
-      { name: "BSC", status: "Vérifié" },
-      { name: "Ethereum", status: "Vérifié" },
+      { name: "Eth", status: "Vérifié" },
+      { name: "BNB Lbank", status: "Vérifié" },
     ],
   },
 
@@ -313,8 +313,8 @@ export const fr: Dictionary = {
     chainsLabel: "Déploiement Multichain",
     chainRows: [
       { c: "Polygon", a: "0xf5c068…914b8" },
-      { c: "BSC", a: "0xbab255…16de4" },
-      { c: "Ethereum", a: "0x936179…8e358" },
+      { c: "Eth", a: "0x936179…8e358" },
+      { c: "BNB Lbank", a: "0xbab255…16de4" },
     ],
     notePrefix: "Les adresses complètes et les codes QR figurent dans la section",
     noteLink: "Transparence",
@@ -522,9 +522,9 @@ export const fr: Dictionary = {
     subtitle:
       "Chaque contrat intelligent ALA est déployé sur trois blockchains publiques. Les adresses sont vérifiables via les explorateurs officiels. Scannez les codes QR ou ouvrez l'explorateur directement.",
     contracts: [
-      { chain: "polygon", chainLabel: "Polygon PoS", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8" },
-      { chain: "bsc", chainLabel: "BNB Smart Chain", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4" },
-      { chain: "ethereum", chainLabel: "Ethereum", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358" },
+      { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "Restructuration", badgeType: "restructuring" },
+      { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "Restructuration", badgeType: "restructuring" },
+      { chain: "bsc", chainLabel: "BNB Négociation Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "Vérifié", badgeType: "verified" },
     ],
     badge: "Vérifié",
     values: [

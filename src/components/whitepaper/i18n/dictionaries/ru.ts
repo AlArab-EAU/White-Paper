@@ -263,9 +263,9 @@ export const ru: Dictionary = {
     p2: "Экосистема мультичейн по замыслу. Контракты ALA развёрнуты и верифицированы в Polygon, BNB Smart Chain и Ethereum, что даёт пользователям гибкость взаимодействия через предпочитаемую сеть, сохраняя идентичность актива неизменной между цепочками.",
     p3: "Смарт-контракты управляют минтингом цифровых активов, эскроу маркетплейса, распределением гонораров, билетами на события и контролем доступа. Каждая транзакция публично проверяема через соответствующий обозреватель блокчейна.",
     chains: [
-      { name: "Polygon", status: "Верифицирован" },
-      { name: "BSC", status: "Верифицирован" },
-      { name: "Ethereum", status: "Верифицирован" },
+      { name: "Polygon", status: "Проверено" },
+      { name: "Eth", status: "Проверено" },
+      { name: "BNB Lbank", status: "Проверено" },
     ],
   },
 
@@ -313,8 +313,8 @@ export const ru: Dictionary = {
     chainsLabel: "Мультичейн-развёртывание",
     chainRows: [
       { c: "Polygon", a: "0xf5c068…914b8" },
-      { c: "BSC", a: "0xbab255…16de4" },
-      { c: "Ethereum", a: "0x936179…8e358" },
+      { c: "Eth", a: "0x936179…8e358" },
+      { c: "BNB Lbank", a: "0xbab255…16de4" },
     ],
     notePrefix: "Полные адреса и QR-коды приведены в разделе",
     noteLink: "Прозрачность",
@@ -522,9 +522,9 @@ export const ru: Dictionary = {
     subtitle:
       "Каждый смарт-контракт ALA развёрнут в трёх публичных блокчейнах. Адреса проверяемы через официальные обозреватели. Сканируйте QR-коды или откройте обозреватель напрямую.",
     contracts: [
-      { chain: "polygon", chainLabel: "Polygon PoS", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8" },
-      { chain: "bsc", chainLabel: "BNB Smart Chain", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4" },
-      { chain: "ethereum", chainLabel: "Ethereum", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358" },
+      { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "Реструктуризация", badgeType: "restructuring" },
+      { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "Реструктуризация", badgeType: "restructuring" },
+      { chain: "bsc", chainLabel: "BNB Трейдинг Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "Проверено", badgeType: "verified" },
     ],
     badge: "Верифицирован",
     values: [

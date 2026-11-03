@@ -264,7 +264,13 @@ export interface Dictionary {
     eyebrow: string;
     title: { pre: string; highlight: string };
     subtitle: string;
-    contracts: { chain: string; chainLabel: string; address: string }[];
+    contracts: {
+      chain: string;
+      chainLabel: string;
+      address: string;
+      badge: string;
+      badgeType: "verified" | "restructuring";
+    }[];
     badge: string;
     values: { t: string; d: string }[];
     noteLabel: string;

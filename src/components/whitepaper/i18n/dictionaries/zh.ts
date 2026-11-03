@@ -264,8 +264,8 @@ export const zh: Dictionary = {
     p3: "智能合约治理数字资产铸造、市场托管、版税分配、活动票务与访问控制。每一笔交易均可通过相应的区块链浏览器公开验证。",
     chains: [
       { name: "Polygon", status: "已验证" },
-      { name: "BSC", status: "已验证" },
-      { name: "Ethereum", status: "已验证" },
+      { name: "Eth", status: "已验证" },
+      { name: "BNB Lbank", status: "已验证" },
     ],
   },
 
@@ -313,8 +313,8 @@ export const zh: Dictionary = {
     chainsLabel: "多链部署",
     chainRows: [
       { c: "Polygon", a: "0xf5c068…914b8" },
-      { c: "BSC", a: "0xbab255…16de4" },
-      { c: "Ethereum", a: "0x936179…8e358" },
+      { c: "Eth", a: "0x936179…8e358" },
+      { c: "BNB Lbank", a: "0xbab255…16de4" },
     ],
     notePrefix: "完整地址与二维码详见",
     noteLink: "透明度",
@@ -522,9 +522,9 @@ export const zh: Dictionary = {
     subtitle:
       "每一个 ALA 智能合约都部署在三条公共区块链上。地址可通过官方浏览器验证。扫描二维码或直接打开浏览器查看。",
     contracts: [
-      { chain: "polygon", chainLabel: "Polygon PoS", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8" },
-      { chain: "bsc", chainLabel: "BNB Smart Chain", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4" },
-      { chain: "ethereum", chainLabel: "Ethereum", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358" },
+      { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "重组中", badgeType: "restructuring" },
+      { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "重组中", badgeType: "restructuring" },
+      { chain: "bsc", chainLabel: "BNB 交易 Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "已验证", badgeType: "verified" },
     ],
     badge: "已验证",
     values: [

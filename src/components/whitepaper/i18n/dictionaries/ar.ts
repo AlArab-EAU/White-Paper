@@ -264,8 +264,8 @@ export const ar: Dictionary = {
     p3: "تدير العقود الذكية سك الأصول الرقمية وضمان السوق وتوزيع العوائد وتذاكر الفعاليات والتحكم بالوصول. كل معاملة قابلة للتحقق العلني عبر مستكشف السلسلة المعني.",
     chains: [
       { name: "Polygon", status: "موثَّق" },
-      { name: "BSC", status: "موثَّق" },
-      { name: "Ethereum", status: "موثَّق" },
+      { name: "Eth", status: "موثَّق" },
+      { name: "BNB Lbank", status: "موثَّق" },
     ],
   },
 
@@ -313,8 +313,8 @@ export const ar: Dictionary = {
     chainsLabel: "النشر متعدد السلاسل",
     chainRows: [
       { c: "Polygon", a: "0xf5c068…914b8" },
-      { c: "BSC", a: "0xbab255…16de4" },
-      { c: "Ethereum", a: "0x936179…8e358" },
+      { c: "Eth", a: "0x936179…8e358" },
+      { c: "BNB Lbank", a: "0xbab255…16de4" },
     ],
     notePrefix: "العناوين الكاملة وأكواد QR مذكورة في قسم",
     noteLink: "الشفافية",
@@ -522,9 +522,9 @@ export const ar: Dictionary = {
     subtitle:
       "كل عقد ذكي لـALA منشور على ثلاث شبكات بلوكتشين عامة. العناوين قابلة للتحقق عبر المستكشفات الرسمية. امسح أكواد QR أو افتح المستكشف مباشرة.",
     contracts: [
-      { chain: "polygon", chainLabel: "Polygon PoS", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8" },
-      { chain: "bsc", chainLabel: "BNB Smart Chain", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4" },
-      { chain: "ethereum", chainLabel: "Ethereum", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358" },
+      { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "إعادة هيكلة", badgeType: "restructuring" },
+      { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "إعادة هيكلة", badgeType: "restructuring" },
+      { chain: "bsc", chainLabel: "BNB تداول Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "موثَّق", badgeType: "verified" },
     ],
     badge: "موثَّق",
     values: [

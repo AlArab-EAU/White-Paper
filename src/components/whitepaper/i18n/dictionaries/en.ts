@@ -264,8 +264,8 @@ export const en: Dictionary = {
     p3: "Smart contracts govern digital asset minting, marketplace escrow, royalty distribution, event ticketing and access control. Every transaction is publicly verifiable through the corresponding blockchain explorer.",
     chains: [
       { name: "Polygon", status: "Verified" },
-      { name: "BSC", status: "Verified" },
-      { name: "Ethereum", status: "Verified" },
+      { name: "Eth", status: "Verified" },
+      { name: "BNB Lbank", status: "Verified" },
     ],
   },
 
@@ -313,8 +313,8 @@ export const en: Dictionary = {
     chainsLabel: "Multi-Chain Deployment",
     chainRows: [
       { c: "Polygon", a: "0xf5c068…914b8" },
-      { c: "BSC", a: "0xbab255…16de4" },
-      { c: "Ethereum", a: "0x936179…8e358" },
+      { c: "Eth", a: "0x936179…8e358" },
+      { c: "BNB Lbank", a: "0xbab255…16de4" },
     ],
     notePrefix: "Full addresses and QR codes are listed in the",
     noteLink: "Transparency",
@@ -522,9 +522,9 @@ export const en: Dictionary = {
     subtitle:
       "Every ALA smart contract is deployed on three public blockchains. Addresses are verifiable through official explorers. Scan the QR codes or open the explorer directly.",
     contracts: [
-      { chain: "polygon", chainLabel: "Polygon PoS", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8" },
-      { chain: "bsc", chainLabel: "BNB Smart Chain", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4" },
-      { chain: "ethereum", chainLabel: "Ethereum", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358" },
+      { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "Restructuring", badgeType: "restructuring" },
+      { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "Restructuring", badgeType: "restructuring" },
+      { chain: "bsc", chainLabel: "BNB Trading Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "Verified", badgeType: "verified" },
     ],
     badge: "Verified",
     values: [
