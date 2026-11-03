@@ -199,12 +199,27 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
             )}
 
             <div className="w-full">
-              <div className="text-[9px] uppercase tracking-[0.2em] text-alarab-muted mb-1">
-                Contract Address
-              </div>
-              <div className="text-[11px] font-mono text-alarab-text break-all leading-relaxed">
-                {c.address}
-              </div>
+              {isPreLaunch ? (
+                <>
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-alarab-gold/80 mb-2">
+                    {c.badge}
+                  </div>
+                  <div className="text-xs text-alarab-muted leading-relaxed">
+                    Contract address will be published
+                    <br />
+                    at the official Lbank listing.
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="text-[9px] uppercase tracking-[0.2em] text-alarab-muted mb-1">
+                    Contract Address
+                  </div>
+                  <div className="text-[11px] font-mono text-alarab-text break-all leading-relaxed">
+                    {c.address}
+                  </div>
+                </>
+              )}
 
               {isRestructuring ? (
                 <div
