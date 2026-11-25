@@ -121,8 +121,11 @@ export function AlaIntroSection() {
           </div>
           <div className="text-base text-alarab-cyan tracking-widest">{a.unit}</div>
 
-          <div className="mt-8 pt-6 border-t border-white/[0.06] text-sm text-alarab-muted leading-relaxed max-w-2xl mx-auto">
-            {a.note} <span className="text-alarab-text">{a.notGov}</span> {a.noteEnd}
+          <div className="mt-8 pt-6 border-t border-white/[0.06] text-sm text-alarab-muted leading-relaxed max-w-2xl mx-auto space-y-4">
+            <p>{a.concept1}</p>
+            <p>{a.concept2}</p>
+            <p>{a.concept3}</p>
+            <p className="text-alarab-gold font-semibold text-sm pt-2">{a.tagline}</p>
           </div>
         </motion.div>
       </div>

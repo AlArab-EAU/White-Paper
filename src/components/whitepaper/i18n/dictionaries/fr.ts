@@ -305,9 +305,10 @@ export const fr: Dictionary = {
     totalLabel: "Offre Totale",
     total: "10,000,000,000",
     unit: "ALA",
-    note: "ALA est l'actif numérique de l'écosystème AlArab. Il fonctionne comme un jeton utilitaire pour accéder aux expériences numériques, à l'activité du marketplace, aux outils créateurs, aux interactions du metaverse et aux services premium. ALA",
-    notGov: "n'est pas une monnaie émise par un gouvernement",
-    noteEnd: "et ne représente aucune garantie de rendement financier, de valeur marchande ou de convertibilité externe.",
+    concept1: "AlArab représente une vision de transformation économique et technologique du monde arabe, présentée sous le leadership du Cheikh Mohamed bin Zayed Al Nahyan, inspirée par la vision de développement et de modernisation d'Abu Dhabi.",
+    concept2: "Son écosystème intègre la finance décentralisée (DeFi), la blockchain, l'intelligence artificielle, le métaverse et la technologie avancée, reliant la richesse, l'innovation et le potentiel économique arabe à la nouvelle économie numérique internationale.",
+    concept3: "ALA est l'actif numérique de cet écosystème, conçu pour connecter les participants, les plateformes, les expériences virtuelles, les services numériques et les opportunités économiques.",
+    tagline: "ALARAB : LEADERSHIP, RICHESSE, TECHNOLOGIE ET VISION GLOBALE.",
   },
 
   whatIsAla: {
