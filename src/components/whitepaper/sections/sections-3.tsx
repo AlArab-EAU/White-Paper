@@ -77,7 +77,7 @@ export function AlaIntroSection() {
             />
             <Image
               src="/images/ala-coin-hero.png"
-              alt="ALA — AlArab Digital Ecosystem Asset coin"
+              alt="ALA, AlArab Digital Ecosystem Asset coin"
               fill
               priority
               className="object-contain drop-shadow-2xl relative z-10"
@@ -423,7 +423,7 @@ export function DigitalAssetsSection() {
         >
           <Image
             src="/images/nft-assets.png"
-            alt="AlArab — digital assets"
+            alt="AlArab, digital assets"
             fill
             className="object-cover"
           />

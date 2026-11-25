@@ -112,7 +112,7 @@ export function SideNav() {
           <div className="relative w-[180px] h-[65px] mb-2">
             <Image
               src="/images/alarab-logo-sidebar.png"
-              alt="AlArab — Official Logo"
+              alt="AlArab, Official Logo"
               fill
               className="object-contain object-left"
               priority
@@ -189,7 +189,7 @@ export function SideNav() {
             <div className="relative w-[120px] h-[44px]">
               <Image
                 src="/images/alarab-logo-mobile.png"
-                alt="AlArab — Official Logo"
+                alt="AlArab, Official Logo"
                 fill
                 className="object-contain object-left"
                 priority

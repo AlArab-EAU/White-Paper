@@ -43,7 +43,7 @@ export function MetaverseSection() {
         >
           <Image
             src="/images/metaverse-vr.png"
-            alt="AlArab Metaverse — VR experience"
+            alt="AlArab Metaverse, VR experience"
             fill
             className="object-cover"
           />

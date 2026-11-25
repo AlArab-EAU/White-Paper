@@ -236,7 +236,7 @@ export function ConclusionSection() {
             />
             <Image
               src="/images/ala-coin-medium.png"
-              alt="ALA — AlArab Digital Ecosystem Asset"
+              alt="ALA, AlArab Digital Ecosystem Asset"
               fill
               className="object-contain relative z-10 drop-shadow-xl"
               sizes="(max-width: 640px) 140px, 160px"
@@ -299,7 +299,7 @@ export function ConclusionSection() {
             <div className="relative w-[200px] h-[73px] sm:w-[260px] sm:h-[95px]">
               <Image
                 src="/images/alarab-logo-sidebar.png"
-                alt="AlArab — Official Logo"
+                alt="AlArab, Official Logo"
                 fill
                 className="object-contain"
                 sizes="(max-width: 640px) 200px, 260px"

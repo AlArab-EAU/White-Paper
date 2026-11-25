@@ -28,7 +28,7 @@ export const en: Dictionary = {
     digitalEconomy: "Digital Economy",
     blockchain: "Blockchain & Smart Contracts",
     aiStack: "AI + Blockchain + VR + Cloud",
-    alaIntro: "ALA — Digital Asset",
+    alaIntro: "ALA, Digital Asset",
     whatIsAla: "What is ALA?",
     alaUtility: "ALA Utility",
     tokenomics: "Tokenomics",
@@ -62,7 +62,7 @@ export const en: Dictionary = {
     eyebrow: "Index",
     title: "Contents",
     subtitle:
-      "A 21-chapter journey through the AlArab ecosystem — from vision and metaverse districts to ALA tokenomics, creator economy and transparent smart contracts.",
+      "A 21-chapter journey through the AlArab ecosystem, from vision and metaverse districts to ALA tokenomics, creator economy and transparent smart contracts.",
     items: [
       { num: "01", t: "Executive Summary" },
       { num: "02", t: "Vision & Mission" },
@@ -74,7 +74,7 @@ export const en: Dictionary = {
       { num: "08", t: "Digital Economy" },
       { num: "09", t: "Blockchain & Smart Contracts" },
       { num: "10", t: "AI + Blockchain + VR + Cloud" },
-      { num: "11", t: "ALA — Digital Asset" },
+      { num: "11", t: "ALA, Digital Asset" },
       { num: "12", t: "Tokenomics" },
       { num: "13", t: "Token Utility" },
       { num: "14", t: "Creator Economy" },
@@ -95,8 +95,8 @@ export const en: Dictionary = {
       highlight: "digital ecosystem",
       post: ", not just a platform",
     },
-    p1: "Originating in Abu Dhabi in 2021 as an Arab Government-backed initiative, lArab is a unified digital ecosystem where technology, culture, commerce, entertainment and innovation converge into a new digital geography for the Arab world. It is built as a programmable layer that connects avatars, digital assets, virtual districts, on-chain payments and creator-driven economies under a single, transparent identity.",
-    p2: "At its core, AlArab is structured around six strategic pillars — Technology, Entertainment, Commerce, Culture, Innovation and Community — and materialized through four persistent virtual districts: the Golden City, Culture Plaza, Digital Souk and Creative District. Together they form a continuous, multi-platform world accessible across Web, Mobile, VR and AR.",
+    p1: "Originating in Abu Dhabi in 2021 as an Arab Government-backed initiative, AlArab is a unified digital ecosystem where technology, culture, commerce, entertainment and innovation converge into a new digital geography for the Arab world. It is built as a programmable layer that connects avatars, digital assets, virtual districts, on-chain payments and creator-driven economies under a single, transparent identity.",
+    p2: "At its core, AlArab is structured around six strategic pillars, Technology, Entertainment, Commerce, Culture, Innovation and Community, and materialized through four persistent virtual districts: the Golden City, Culture Plaza, Digital Souk and Creative District. Together they form a continuous, multi-platform world accessible across Web, Mobile, VR and AR.",
     p3: "The ecosystem is powered by the ALA digital asset, with a fixed total supply of 10,000,000,000 units. ALA functions as a utility token for digital experiences, marketplace activity, the creator economy, metaverse access, digital assets, events and premium services. Its distribution is fully transparent and verifiable on the BNB Smart Chain, AlArab's native blockchain.",
     p4: "This whitepaper presents the architecture, economy, technology stack, roadmap and risk framework of AlArab. It is intended as an institutional reference for partners, developers, creators and community members evaluating the project's scope and direction.",
     stats: [
@@ -125,19 +125,19 @@ export const en: Dictionary = {
     ],
     visionLabel: "Vision",
     visionText:
-      "To become the reference digital ecosystem for the Arab world — a programmable geography where citizens, creators and enterprises converge into a persistent, transparent and culturally rooted virtual economy.",
+      "To become the reference digital ecosystem for the Arab world, a programmable geography where citizens, creators and enterprises converge into a persistent, transparent and culturally rooted virtual economy.",
     missionLabel: "Mission",
     missionText:
-      "To deliver a unified stack — Web, Mobile, VR and AR — that lets any creator or business in the region launch digital experiences, assets and services on-chain, with verifiable transparency and without surrendering cultural identity.",
+      "To deliver a unified stack, Web, Mobile, VR and AR, that lets any creator or business in the region launch digital experiences, assets and services on-chain, with verifiable transparency and without surrendering cultural identity.",
   },
 
   arabFuture: {
     eyebrow: "The Ecosystem",
     title: { pre: "The Arab", highlight: "Digital Future" },
     p1: "The Arab world has historically been a crossroads of trade, science and culture. AlArab extends that tradition into the digital era by building a shared, programmable geography where the region's identity is not erased by global platforms but encoded into the infrastructure itself.",
-    p2: "Instead of importing a foreign metaverse, AlArab proposes a native digital territory — anchored in Arabic language, heritage and aesthetic — and engineered with the same technologies used by leading global ecosystems: blockchain, AI, real-time 3D and cloud-native infrastructure.",
+    p2: "Instead of importing a foreign metaverse, AlArab proposes a native digital territory, anchored in Arabic language, heritage and aesthetic, and engineered with the same technologies used by leading global ecosystems: blockchain, AI, real-time 3D and cloud-native infrastructure.",
     p3: "The result is a digital future in which citizens, creators and enterprises can build, trade and gather across Web, Mobile, VR and AR, using a transparent on-chain economy and a verifiable digital identity that travels with them across every district.",
-    p4: "AlArab draws on the historic wealth of the Arab world — energy, petroleum, gold and trade — and connects it with the power of the digital economy. Its vision integrates the Middle East, Asia, Europe, the United States and Latin America into a single framework of international economic participation, where tradition and innovation, heritage and technology, Arab identity and global connection converge.",
+    p4: "AlArab draws on the historic wealth of the Arab world, energy, petroleum, gold and trade, and connects it with the power of the digital economy. Its vision integrates the Middle East, Asia, Europe, the United States and Latin America into a single framework of international economic participation, where tradition and innovation, heritage and technology, Arab identity and global connection converge.",
     visualLabel: "Concept Visual",
     visualCaption: "A native digital territory for the Arab world",
   },
@@ -146,7 +146,7 @@ export const en: Dictionary = {
     eyebrow: "The Persistent World",
     title: { pre: "AlArab", highlight: "Metaverse" },
     p1: "The AlArab Metaverse is a persistent, real-time 3D world that runs continuously across devices. It is not a single application but a network of interoperable virtual districts, each with its own architectural identity, economic logic and community.",
-    p2: "Citizens of the metaverse own a portable digital identity — an avatar, a wallet and a profile — that travels with them across districts, devices and experiences. Land, assets and interactions are recorded on-chain, ensuring transparency and verifiable ownership.",
+    p2: "Citizens of the metaverse own a portable digital identity, an avatar, a wallet and a profile, that travels with them across districts, devices and experiences. Land, assets and interactions are recorded on-chain, ensuring transparency and verifiable ownership.",
     p3: "The metaverse is designed to host live events, commerce, education, cultural exhibitions and creator-built experiences, all governed by a unified economic layer anchored in the ALA digital asset.",
   },
 
@@ -187,7 +187,7 @@ export const en: Dictionary = {
     eyebrow: "Cross-Platform",
     title: { pre: "The persistent", highlight: "virtual world" },
     subtitle:
-      "A single continuous world accessible across Web, Mobile, VR and AR — with a portable identity that follows the citizen everywhere.",
+      "A single continuous world accessible across Web, Mobile, VR and AR, with a portable identity that follows the citizen everywhere.",
     platforms: [
       { name: "Web", desc: "Browser-based access to districts, marketplace, wallet and creator tools." },
       { name: "Mobile", desc: "Native iOS and Android apps with full identity and asset portability." },
@@ -208,13 +208,13 @@ export const en: Dictionary = {
     eyebrow: "Five-Layer Stack",
     title: { pre: "Ecosystem", highlight: "Architecture" },
     subtitle:
-      "A five-layer stack that cleanly separates experience, application, data, consensus and infrastructure — enabling every layer to evolve independently.",
+      "A five-layer stack that cleanly separates experience, application, data, consensus and infrastructure, enabling every layer to evolve independently.",
     layers: [
       {
         layer: "L5",
         name: "Experience",
         items: ["Web", "Mobile", "VR", "AR"],
-        desc: "Multi-platform access layer — every citizen enters the ecosystem through their preferred device.",
+        desc: "Multi-platform access layer, every citizen enters the ecosystem through their preferred device.",
       },
       {
         layer: "L4",
@@ -226,13 +226,13 @@ export const en: Dictionary = {
         layer: "L3",
         name: "Data",
         items: ["Identity", "Assets", "Profiles"],
-        desc: "Portable, self-sovereign data layer — avatars, wallets, asset ownership and reputation.",
+        desc: "Portable, self-sovereign data layer, avatars, wallets, asset ownership and reputation.",
       },
       {
         layer: "L2",
         name: "Consensus",
         items: ["Blockchain", "Smart Contracts"],
-        desc: "On-chain settlement and programmable logic — transparent, auditable, multi-chain.",
+        desc: "On-chain settlement and programmable logic, transparent, auditable, multi-chain.",
       },
       {
         layer: "L1",
@@ -247,11 +247,11 @@ export const en: Dictionary = {
     eyebrow: "Internal Economy",
     title: { pre: "The", highlight: "Digital Economy", post: " of AlArab" },
     subtitle:
-      "A closed-loop economy where value circulates through marketplace activity, wallets, digital assets and internal payments — all anchored in ALA.",
+      "A closed-loop economy where value circulates through marketplace activity, wallets, digital assets and internal payments, all anchored in ALA.",
     cards: [
       { t: "Marketplace", d: "Open marketplace for digital assets, experiences, services and creator-built products, with on-chain royalty splits." },
-      { t: "Wallet", d: "Self-custodial wallet integrated with every district — stores ALA, digital assets and verified identity." },
-      { t: "Digital Assets", d: "Skins, accessories, landplots, experiences, art and collectibles — tokenized and portable across districts." },
+      { t: "Wallet", d: "Self-custodial wallet integrated with every district, stores ALA, digital assets and verified identity." },
+      { t: "Digital Assets", d: "Skins, accessories, landplots, experiences, art and collectibles, tokenized and portable across districts." },
       { t: "Internal Payments", d: "Frictionless, low-cost on-chain payments for goods, services, events and creator tips across the ecosystem." },
     ],
     flowLabel: "Flow",
@@ -261,7 +261,7 @@ export const en: Dictionary = {
   blockchain: {
     eyebrow: "Trust Layer",
     title: { pre: "Blockchain &", highlight: "Smart Contracts" },
-    p1: "AlArab uses smart contracts as the trust layer for every economic interaction — ownership transfers, marketplace trades, creator royalties, event access, governance and identity claims. All contracts are deployed on public, auditable blockchains.",
+    p1: "AlArab uses smart contracts as the trust layer for every economic interaction, ownership transfers, marketplace trades, creator royalties, event access, governance and identity claims. All contracts are deployed on public, auditable blockchains.",
     p2: "The ecosystem is multi-chain by design. ALA contracts are deployed and verified on Polygon, BNB Smart Chain and Ethereum, giving users the flexibility to interact through their preferred network while keeping the asset's identity consistent across chains.",
     p3: "Smart contracts govern digital asset minting, marketplace escrow, royalty distribution, event ticketing and access control. Every transaction is publicly verifiable through the corresponding blockchain explorer.",
     chains: [
@@ -314,7 +314,7 @@ export const en: Dictionary = {
     eyebrow: "Asset Specification",
     title: { pre: "What is", highlight: "ALA?" },
     subtitle:
-      "A complete specification of the AlArab digital ecosystem asset — supply, contract, chains and verifiable transparency.",
+      "A complete specification of the AlArab digital ecosystem asset, supply, contract, chains and verifiable transparency.",
     supplyLabel: "Supply",
     supply: "10,000,000,000 ALA",
     supplySub: "Fixed · Non-inflatable",
@@ -357,7 +357,7 @@ export const en: Dictionary = {
 
   tokenomics: {
     eyebrow: "Distribution",
-    title: { pre: "", highlight: "Tokenomics", post: " — 10,000,000,000 ALA" },
+    title: { pre: "", highlight: "Tokenomics", post: ", 10,000,000,000 ALA" },
     subtitle:
       "Transparent, fixed allocation of 10 billion ALA on the BNB Smart Chain, designed to balance ecosystem growth, liquidity, community, technology and long-term sustainability.",
     chartTotalLabel: "TOTAL SUPPLY",
@@ -377,7 +377,7 @@ export const en: Dictionary = {
     total: "10,000,000,000 ALA",
     designTitle: "Design Principles",
     designPrinciples: [
-      "Fixed supply — no inflation mechanism",
+      "Fixed supply, no inflation mechanism",
       "Majority (65%) allocated to community, ecosystem and liquidity",
       "Team and advisors locked with multi-year vesting",
       "Treasury reserve for ecosystem stability",
@@ -415,11 +415,11 @@ export const en: Dictionary = {
   digitalAssets: {
     eyebrow: "Asset Universe",
     title: { pre: "Digital", highlight: "Assets", post: " & NFTs" },
-    p1: "Digital assets in AlArab are not just collectibles — they are functional objects that exist inside the metaverse. Every asset is tokenized, portable across districts and tradeable on the open marketplace.",
+    p1: "Digital assets in AlArab are not just collectibles, they are functional objects that exist inside the metaverse. Every asset is tokenized, portable across districts and tradeable on the open marketplace.",
     assets: [
-      { t: "Skins", d: "Cosmetic avatar customizations — outfits, animations and effects." },
+      { t: "Skins", d: "Cosmetic avatar customizations, outfits, animations and effects." },
       { t: "Accessories", d: "Wearable items, gestures, emotes and identity badges." },
-      { t: "Landplots", d: "Ownable parcels inside each district — buildable and monetizable." },
+      { t: "Landplots", d: "Ownable parcels inside each district, buildable and monetizable." },
       { t: "Experiences", d: "Ticketed events, immersive worlds and limited-access content." },
       { t: "Digital Art", d: "NFT-native artworks displayed in galleries and private collections." },
       { t: "Collectibles", d: "Limited-edition items with verifiable provenance and rarity." },
@@ -430,7 +430,7 @@ export const en: Dictionary = {
     eyebrow: "Industry Coverage",
     title: { pre: "Eight industry", highlight: "verticals" },
     subtitle:
-      "AlArab is not a single vertical — it is a programmable substrate for eight converging industries, each with its own district, creators and economic logic.",
+      "AlArab is not a single vertical, it is a programmable substrate for eight converging industries, each with its own district, creators and economic logic.",
     items: [
       { name: "Fashion" },
       { name: "Music" },
@@ -443,7 +443,7 @@ export const en: Dictionary = {
     ],
     convergenceLabel: "Convergence",
     convergence:
-      "Verticals are not isolated silos. A musician can release an album in the Creative District, collaborate with a fashion house to design virtual merchandise, sell it in the Digital Souk and settle payments through ALA — all in one persistent, on-chain economy.",
+      "Verticals are not isolated silos. A musician can release an album in the Creative District, collaborate with a fashion house to design virtual merchandise, sell it in the Digital Souk and settle payments through ALA, all in one persistent, on-chain economy.",
   },
 
   roadmap: {
@@ -514,7 +514,7 @@ export const en: Dictionary = {
     eyebrow: "Network",
     title: { pre: "Strategic", highlight: "Partnerships" },
     subtitle:
-      "AlArab is built with — not instead of — the regional ecosystem. Partnerships are classified by type and clearly distinguished from legally verified relationships.",
+      "AlArab is built with, not instead of, the regional ecosystem. Partnerships are classified by type and clearly distinguished from legally verified relationships.",
     partners: [
       { name: "GCRM", type: "Strategic Partner", desc: "Global community and relationship management partner supporting AlArab's regional expansion and institutional outreach." },
       { name: "QFSPay", type: "Payments Partner", desc: "Payment infrastructure partner enabling fiat on-ramps, off-ramps and complementary digital payment rails." },
@@ -542,7 +542,7 @@ export const en: Dictionary = {
     ],
     badge: "Verified",
     values: [
-      { t: "Public", d: "All contracts deployed on public mainnets — no private chains, no obfuscation." },
+      { t: "Public", d: "All contracts deployed on public mainnets, no private chains, no obfuscation." },
       { t: "Verifiable", d: "Source code published and verified on each blockchain explorer." },
       { t: "Transparent", d: "Every transaction, holder and balance is publicly auditable in real time." },
     ],
@@ -557,15 +557,15 @@ export const en: Dictionary = {
     subtitle:
       "AlArab is presented as a digital ecosystem and conceptual project. This section discloses the material risks associated with digital assets and the ecosystem itself.",
     risks: [
-      "Digital assets involve risk — their value can be volatile and may decrease.",
-      "No guaranteed return — AlArab does not promise any financial yield or profit.",
-      "No guarantee of market value — ALA's market price, if any, is determined by external markets outside AlArab's control.",
-      "No guarantee of external convertibility — liquidity on any specific exchange is not guaranteed.",
-      "Ecosystem features may evolve — roadmaps, utilities and integrations may change over time.",
-      "Smart-contract risks — bugs, exploits or vulnerabilities may exist despite verification.",
-      "Market and liquidity risks — secondary market activity may be limited or illiquid.",
-      "Regulatory risks — digital asset regulation varies by jurisdiction and is evolving.",
-      "Technology and cybersecurity risks — platform outages, attacks or data loss may occur.",
+      "Digital assets involve risk, their value can be volatile and may decrease.",
+      "No guaranteed return, AlArab does not promise any financial yield or profit.",
+      "No guarantee of market value, ALA's market price, if any, is determined by external markets outside AlArab's control.",
+      "No guarantee of external convertibility, liquidity on any specific exchange is not guaranteed.",
+      "Ecosystem features may evolve, roadmaps, utilities and integrations may change over time.",
+      "Smart-contract risks, bugs, exploits or vulnerabilities may exist despite verification.",
+      "Market and liquidity risks, secondary market activity may be limited or illiquid.",
+      "Regulatory risks, digital asset regulation varies by jurisdiction and is evolving.",
+      "Technology and cybersecurity risks, platform outages, attacks or data loss may occur.",
     ],
     disclaimerLabel: "Formal Disclaimer",
     disclaimer:
@@ -575,7 +575,7 @@ export const en: Dictionary = {
   conclusion: {
     eyebrow: "Conclusion",
     title: { pre: "The Digital Future of the", highlight: "Arab World" },
-    p1: "AlArab is not a single product, a token, or a virtual world. It is a unified digital ecosystem — a programmable geography where the Arab world's culture, commerce, creativity and community converge into a new digital territory. Built on transparent smart contracts, anchored by a fixed-supply utility asset, and structured around six pillars and four persistent districts, AlArab offers a native alternative to imported digital platforms — one that is verifiable, interoperable and culturally rooted.",
+    p1: "AlArab is not a single product, a token, or a virtual world. It is a unified digital ecosystem, a programmable geography where the Arab world's culture, commerce, creativity and community converge into a new digital territory. Built on transparent smart contracts, anchored by a fixed-supply utility asset, and structured around six pillars and four persistent districts, AlArab offers a native alternative to imported digital platforms, one that is verifiable, interoperable and culturally rooted.",
     stats: [
       { k: "10B", v: "ALA Fixed Supply" },
       { k: "3", v: "Public Blockchains" },

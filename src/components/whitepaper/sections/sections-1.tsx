@@ -32,7 +32,7 @@ export function CoverSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-city.png"
-          alt="AlArab — futuristic Arabian Gulf megacity at night"
+          alt="AlArab, futuristic Arabian Gulf megacity at night"
           fill
           priority
           className="object-cover opacity-50"
@@ -63,7 +63,7 @@ export function CoverSection() {
           <div className="relative w-[280px] h-[100px] sm:w-[400px] sm:h-[145px] md:w-[520px] md:h-[190px] lg:w-[640px] lg:h-[230px]">
             <Image
               src="/images/alarab-logo-hero.png"
-              alt="AlArab — Official Logo"
+              alt="AlArab, Official Logo"
               fill
               priority
               className="object-contain"
@@ -311,7 +311,7 @@ export function ArabFutureSection() {
         >
           <Image
             src="/images/hero-city.png"
-            alt="AlArab — futuristic Arabian Gulf megacity"
+            alt="AlArab, futuristic Arabian Gulf megacity"
             fill
             className="object-cover"
           />

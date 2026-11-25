@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AlArab — Whitepaper | The Digital Future of the Arab World",
+  title: "AlArab: Whitepaper | The Digital Future of the Arab World",
   description:
     "Official AlArab Whitepaper: a unified digital ecosystem where technology, culture, commerce, entertainment and innovation converge into a new digital geography for the Arab world. Available in 8 languages.",
   keywords: [
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
     apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "AlArab — The Digital Future of the Arab World",
+    title: "AlArab: The Digital Future of the Arab World",
     description:
-      "Official Whitepaper. Six pillars. Four digital districts. One ecosystem. Available in 8 languages.",
+      "Official Whitepaper. Eight pillars. Four digital districts. One ecosystem. Available in 8 languages.",
     url: "https://whitepaper.alarab-defi.com",
     siteName: "AlArab Whitepaper",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AlArab — Whitepaper",
+    title: "AlArab: Whitepaper",
     description: "The Digital Future of the Arab World",
   },
 };
