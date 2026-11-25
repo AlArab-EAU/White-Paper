@@ -54,7 +54,8 @@ export const pt: Dictionary = {
   cover: {
     title: "AL ARAB",
     subtitle: "O Futuro Digital do Mundo Árabe",
-    tags: ["Tecnologia", "Cultura", "Inovação", "Metaverso", "Economia Digital"],
+    tagline: "O futuro é DeFi. DeFi é AlArab.",
+    tags: ["Riqueza", "Tecnologia", "Inovação", "Economia Global"],
   },
 
   contents: {
@@ -94,7 +95,7 @@ export const pt: Dictionary = {
       highlight: "ecossistema digital",
       post: " unificado, não apenas uma plataforma",
     },
-    p1: "A AlArab é um ecossistema digital unificado onde tecnologia, cultura, comércio, entretenimento e inovação convergem em uma nova geografia digital para o mundo árabe. É construída como uma camada programável que conecta avatares, ativos digitais, distritos virtuais, pagamentos on-chain e economias orientadas a criadores sob uma identidade única e transparente.",
+    p1: "Originado em Abu Dhabi em 2021 como uma iniciativa apoiada pelo Governo Árabe, A AlArab é um ecossistema digital unificado onde tecnologia, cultura, comércio, entretenimento e inovação convergem em uma nova geografia digital para o mundo árabe. É construída como uma camada programável que conecta avatares, ativos digitais, distritos virtuais, pagamentos on-chain e economias orientadas a criadores sob uma identidade única e transparente.",
     p2: "Em sua essência, a AlArab é estruturada em torno de seis pilares estratégicos — Tecnologia, Entretenimento, Comércio, Cultura, Inovação e Comunidade — e materializada através de quatro distritos virtuais persistentes: a Cidade Dourada, a Praça da Cultura, o Souk Digital e o Distrito Criativo. Juntos, eles formam um mundo contínuo e multiplataforma acessível via Web, Mobile, VR e AR.",
     p3: "O ecossistema é impulsionado pelo ativo digital ALA, com uma oferta total fixa de 10,000,000,000 unidades. A ALA funciona como um token de utilidade para experiências digitais, atividade no marketplace, economia de criadores, acesso ao metaverso, ativos digitais, eventos e serviços premium. Sua distribuição é totalmente transparente e verificável na BNB Smart Chain, a blockchain nativa do AlArab.",
     p4: "Este whitepaper apresenta a arquitetura, economia, stack tecnológica, roadmap e estrutura de risco da AlArab. Tem como objetivo servir como referência institucional para parceiros, desenvolvedores, criadores e membros da comunidade que avaliam o escopo e a direção do projeto.",
@@ -136,6 +137,7 @@ export const pt: Dictionary = {
     p1: "O mundo árabe foi historicamente um cruzamento de comércio, ciência e cultura. A AlArab estende essa tradição para a era digital construindo uma geografia programável e compartilhada, onde a identidade da região não é apagada por plataformas globais, mas codificada na própria infraestrutura.",
     p2: "Em vez de importar um metaverso estrangeiro, a AlArab propõe um território digital nativo — ancorado na língua árabe, no patrimônio e na estética — e engenheirado com as mesmas tecnologias usadas pelos principais ecossistemas globais: blockchain, IA, 3D em tempo real e infraestrutura cloud-native.",
     p3: "O resultado é um futuro digital no qual cidadãos, criadores e empresas podem construir, negociar e se reunir via Web, Mobile, VR e AR, usando uma economia on-chain transparente e uma identidade digital verificável que os acompanha em todos os distritos.",
+    p4: "AlArab baseia-se na riqueza histórica do mundo árabe — energia, petróleo, ouro e comércio — e a conecta com o poder da economia digital. Sua visão integra o Oriente Médio, a Ásia, a Europa, os Estados Unidos e a América Latina em uma única estrutura de participação econômica internacional, onde tradição e inovação, patrimônio e tecnologia, identidade árabe e conexão global convergem.",
     visualLabel: "Visual Conceitual",
     visualCaption: "Um território digital nativo para o mundo árabe",
   },
@@ -267,20 +269,32 @@ export const pt: Dictionary = {
       { name: "Eth", status: "Verificado" },
       { name: "Negociação Lbank", status: "Verificado" },
     ],
+    principlesLabel: "Sete Princípios DeFi",
+    principles: [
+      { name: "Protocolo DeFi", desc: "Infraestrutura financeira descentralizada no núcleo do ecossistema." },
+      { name: "Garantias Reais", desc: "Modelos lastreados em ativos com garantias verificáveis on-chain." },
+      { name: "Avaliação Digital", desc: "Mecanismos de avaliação e registro transparente de ativos." },
+      { name: "Economia do Petróleo", desc: "Referência ao patrimônio energético do mundo árabe." },
+      { name: "Desenvolvimento Tecnológico", desc: "Inovação contínua e avanço da infraestrutura digital." },
+      { name: "Energia Limpa", desc: "Tecnologia e eficiência energética a serviço da sustentabilidade." },
+      { name: "Expansão Internacional", desc: "Conexão com participantes de diferentes países." },
+    ],
   },
 
   aiStack: {
     eyebrow: "Stack Tecnológica",
     title: { pre: "IA + Blockchain + VR +", highlight: "Nuvem" },
     subtitle:
-      "Seis pilares tecnológicos convergindo em um único ecossistema programável. Cada um é maduro de forma independente; juntos, eles formam o sistema operacional da AlArab.",
+      "Oito pilares tecnológicos convergindo em um único ecossistema programável. Cada um é maduro de forma independente; juntos, eles formam o sistema operacional da AlArab.",
     stack: [
-      { name: "Inteligência Artificial", desc: "NPCs orientados por IA, moderação de conteúdo, recomendação, tradução e ferramentas para criadores em todo o metaverso." },
-      { name: "Blockchain", desc: "Liquidação multi-chain, contratos inteligentes, propriedade verificável e tokenomia transparente." },
-      { name: "Realidade Virtual", desc: "Distritos 3D imersivos, voz espacial, eventos ao vivo e experiências sociais orientadas por avatares." },
-      { name: "Infraestrutura em Nuvem", desc: "Computação elástica, armazenamento e CDN para multiplayer em tempo real e streaming de ativos." },
-      { name: "Segurança", desc: "Verificação de identidade, antifraude, gerenciamento de chaves e controle de acesso em nível de contrato." },
-      { name: "Computação Avançada", desc: "Clusters de GPU para renderização, inferência de IA e simulação física em todos os distritos." },
+      { name: "Inteligência Artificial", desc: "NPCs movidos a IA, moderação de conteúdo, recomendação, tradução e ferramentas para criadores no metaverso." },
+      { name: "Blockchain", desc: "Liquidação multi-chain, contratos inteligentes, propriedade verificável e tokenômica transparente." },
+      { name: "Metaverso", desc: "Distritos virtuais 3D persistentes, comércio imersivo, eventos ao vivo e experiências sociais em vários dispositivos." },
+      { name: "Realidade Virtual", desc: "Distritos 3D imersivos, voz espacial, eventos ao vivo e experiências sociais com avatares." },
+      { name: "Infraestrutura Digital", desc: "Computação elástica, armazenamento e CDN para multijogador em tempo real e streaming de ativos." },
+      { name: "Segurança Avançada", desc: "Verificação de identidade, antifraude, gestão de chaves e controle de acesso em nível de contrato." },
+      { name: "Computação Avançada", desc: "Clusters de GPU para renderização, inferência de IA e simulação física nos distritos." },
+      { name: "Finanças Descentralizadas", desc: "Protocolos DeFi, liquidez on-chain, staking e serviços financeiros transparentes." },
     ],
   },
 

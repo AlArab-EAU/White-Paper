@@ -81,6 +81,15 @@ export function CoverSection() {
           {t.cover.subtitle}
         </motion.p>
 
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.4 }}
+          className="mt-3 text-base sm:text-lg md:text-xl font-semibold tracking-wide text-gradient-gold"
+        >
+          {t.cover.tagline}
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -289,6 +298,7 @@ export function ArabFutureSection() {
             <p>{a.p1}</p>
             <p>{a.p2}</p>
             <p>{a.p3}</p>
+            <p>{a.p4}</p>
           </div>
         </motion.div>
 

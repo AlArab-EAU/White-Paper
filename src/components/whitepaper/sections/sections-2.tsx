@@ -22,7 +22,7 @@ import { Section } from "../Section";
 import { useLanguage } from "../i18n/LanguageProvider";
 
 const PLATFORM_ICONS = [Globe2, Smartphone, Headset, Glasses];
-const TECH_ICONS = [Brain, Network, Headset, Cloud, ShieldCheck, Server];
+const TECH_ICONS = [Brain, Network, Globe2, Headset, Cloud, ShieldCheck, Server, Coins];
 
 /* ============================== 05 — ALARAB METAVERSE ============================== */
 export function MetaverseSection() {
@@ -416,12 +416,48 @@ export function BlockchainSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-alarab-bg via-alarab-bg/40 to-transparent" />
         </motion.div>
       </div>
+
+      {/* Seven DeFi Principles — full width below the two-column layout */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mt-12 w-full"
+      >
+        <div className="flex items-center gap-3 mb-5">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-alarab-gold/80">
+            {b.principlesLabel}
+          </span>
+          <div className="h-px flex-1 bg-gradient-to-r from-alarab-gold/40 to-transparent" />
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {b.principles.map((p, i) => (
+            <motion.div
+              key={p.name}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.06 }}
+              className="alarab-panel rounded-lg p-4 hover:bg-white/[0.04] transition-colors"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-bold text-alarab-gold tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-sm font-semibold text-alarab-text">{p.name}</h3>
+              </div>
+              <p className="text-[11px] text-alarab-muted leading-relaxed">{p.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }
 
 /* ============================== 11 — AI + BLOCKCHAIN + VR + CLOUD ============================== */
-const TECH_COLORS = ["#A78BFA", "#E5B958", "#38BDF8", "#34D399", "#F472B6", "#FBBF24"];
+const TECH_COLORS = ["#A78BFA", "#E5B958", "#38BDF8", "#34D399", "#F472B6", "#FBBF24", "#60A5FA", "#22D3EE"];
 
 export function AIStackSection() {
   const { t } = useLanguage();

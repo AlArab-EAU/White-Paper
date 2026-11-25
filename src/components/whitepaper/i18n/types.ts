@@ -58,6 +58,7 @@ export interface Dictionary {
   cover: {
     title: string;
     subtitle: string;
+    tagline: string;
     tags: string[];
   };
 
@@ -95,6 +96,7 @@ export interface Dictionary {
     p1: string;
     p2: string;
     p3: string;
+    p4: string;
     visualLabel: string;
     visualCaption: string;
   };
@@ -150,6 +152,8 @@ export interface Dictionary {
     p2: string;
     p3: string;
     chains: { name: string; status: string }[];
+    principlesLabel: string;
+    principles: { name: string; desc: string }[];
   };
 
   aiStack: {
