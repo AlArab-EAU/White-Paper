@@ -314,7 +314,7 @@ export const es: Dictionary = {
     chainRows: [
       { c: "Polygon", a: "0xf5c068…914b8" },
       { c: "Eth", a: "0x936179…8e358" },
-      { c: "Negociación Lbank", a: "0xbab255…16de4" },
+      { c: "Negociación Lbank", a: "0x53A031…f00a2" },
     ],
     notePrefix: "Las direcciones completas y los códigos QR están en la sección de",
     noteLink: "Transparencia",
@@ -524,7 +524,7 @@ export const es: Dictionary = {
     contracts: [
       { chain: "polygon", chainLabel: "Polygon", address: "0xf5c068f28ebf91b22e52c2ecd230621879e914b8", badge: "En Reestructuración", badgeType: "restructuring" },
       { chain: "ethereum", chainLabel: "Eth", address: "0x93617904A0A15063B54bd14cC595AA10f2A8e358", badge: "En Reestructuración", badgeType: "restructuring" },
-      { chain: "bsc", chainLabel: "Negociación Lbank", address: "0xbab2556a4db42918a2c833eb2b70fedaf7016de4", badge: "Pre Lanzamiento Lbank", badgeType: "pre-launch" },
+      { chain: "bsc", chainLabel: "Negociación Lbank", address: "0x53A0311427554B97d383EE1fB6E9EbCcBD4f00a2", badge: "Pre Lanzamiento Lbank", badgeType: "pre-launch" },
     ],
     badge: "Verificado",
     values: [

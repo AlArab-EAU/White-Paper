@@ -155,7 +155,7 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
               </div>
             ) : isPreLaunch ? (
               <div
-                className="rounded-xl mb-5 flex flex-col items-center justify-center py-8 px-6"
+                className="relative rounded-xl mb-5 flex flex-col items-center justify-center py-6 px-6"
                 style={{
                   background:
                     "radial-gradient(ellipse at center, rgba(251,191,36,0.10) 0%, rgba(0,0,0,0) 70%)",
@@ -164,23 +164,36 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
               >
                 {/* Glow halo behind the logo */}
                 <div
-                  className="absolute inset-x-8 top-8 bottom-8 rounded-full blur-3xl opacity-40 pointer-events-none"
+                  className="absolute inset-x-8 top-6 bottom-6 rounded-full blur-3xl opacity-40 pointer-events-none"
                   style={{
                     background: `radial-gradient(circle, ${badgeColor}55 0%, transparent 70%)`,
                   }}
                 />
-                {/* Lbank logo — clean, generous horizontal padding */}
-                <div className="relative w-[200px] h-[48px] mb-4 z-10">
+                {/* Lbank logo */}
+                <div className="relative w-[180px] h-[42px] mb-4 z-10">
                   <Image
                     src="/images/lbank-logo-card.png"
                     alt="Lbank Exchange Logo"
                     fill
                     className="object-contain"
-                    sizes="200px"
+                    sizes="180px"
                   />
                 </div>
-                <div className="text-[10px] uppercase tracking-[0.35em] text-alarab-gold/90 z-10">
-                  Coming Soon
+                {/* QR code — verify the official contract on BscScan */}
+                <div
+                  className="relative p-2 rounded-lg bg-white z-10 mb-3"
+                  style={{ boxShadow: `0 0 20px ${badgeColor}40` }}
+                >
+                  <QRCodeSVG
+                    value={explorerUrl}
+                    size={96}
+                    level="M"
+                    bgColor="#FFFFFF"
+                    fgColor="#040917"
+                  />
+                </div>
+                <div className="relative text-[10px] uppercase tracking-[0.35em] text-alarab-gold/90 z-10">
+                  Coming Soon on Lbank
                 </div>
               </div>
             ) : (
@@ -201,27 +214,12 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
             )}
 
             <div className="w-full">
-              {isPreLaunch ? (
-                <>
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-alarab-gold/80 mb-2">
-                    {c.badge}
-                  </div>
-                  <div className="text-xs text-alarab-muted leading-relaxed">
-                    Contract address will be published
-                    <br />
-                    at the official Lbank listing.
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="text-[9px] uppercase tracking-[0.2em] text-alarab-muted mb-1">
-                    Contract Address
-                  </div>
-                  <div className="text-[11px] font-mono text-alarab-text break-all leading-relaxed">
-                    {c.address}
-                  </div>
-                </>
-              )}
+              <div className="text-[9px] uppercase tracking-[0.2em] text-alarab-muted mb-1">
+                Contract Address
+              </div>
+              <div className="text-[11px] font-mono text-alarab-text break-all leading-relaxed">
+                {c.address}
+              </div>
 
               {isRestructuring ? (
                 <div
@@ -236,21 +234,38 @@ export function ContractsBlock({ contracts, viewOnLabel, badge }: Props) {
                   Address frozen during restructuring
                 </div>
               ) : isPreLaunch ? (
-                <a
-                  href="https://www.lbank.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md transition-all hover:scale-105"
-                  style={{
-                    color: badgeColor,
-                    backgroundColor: `${badgeColor}14`,
-                    border: `1px solid ${badgeColor}40`,
-                  }}
-                >
-                  <Rocket className="w-3 h-3" />
-                  Listing on Lbank
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <div className="mt-4 flex flex-col gap-2 w-full">
+                  <a
+                    href={explorerUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 text-xs px-3 py-1.5 rounded-md transition-all hover:scale-[1.02]"
+                    style={{
+                      color: "#040917",
+                      backgroundColor: badgeColor,
+                      border: `1px solid ${badgeColor}`,
+                    }}
+                  >
+                    <ShieldCheck className="w-3 h-3" />
+                    {viewOnLabel} BscScan
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                  <a
+                    href="https://www.lbank.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 text-xs px-3 py-1.5 rounded-md transition-all hover:scale-[1.02]"
+                    style={{
+                      color: badgeColor,
+                      backgroundColor: `${badgeColor}14`,
+                      border: `1px solid ${badgeColor}40`,
+                    }}
+                  >
+                    <Rocket className="w-3 h-3" />
+                    Listing on Lbank
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
               ) : (
                 <a
                   href={explorerUrl}
