@@ -361,7 +361,8 @@ export function BlockchainSection() {
       id="blockchain"
       className="relative min-h-screen w-full flex items-center px-5 sm:px-8 md:px-12 lg:px-20 py-20"
     >
-      <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-6xl mx-auto w-full flex flex-col gap-12">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -387,14 +388,16 @@ export function BlockchainSection() {
             <p>{b.p3}</p>
           </div>
 
-          <div className="mt-6 grid grid-cols-3 gap-3">
+          <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
             {b.chains.map((c) => (
               <div
                 key={c.name}
-                className="text-center py-2 px-3 rounded-lg bg-alarab-accent border border-alarab-line"
+                className="text-center py-2.5 px-2 sm:px-3 rounded-lg bg-alarab-accent border border-alarab-line"
               >
-                <div className="text-xs font-semibold text-alarab-gold">{c.name}</div>
-                <div className="text-[9px] text-alarab-muted mt-0.5">{c.status}</div>
+                <div className="text-[11px] sm:text-xs font-semibold text-alarab-gold leading-tight break-words">
+                  {c.name}
+                </div>
+                <div className="text-[9px] text-alarab-muted mt-1">{c.status}</div>
               </div>
             ))}
           </div>
@@ -417,13 +420,13 @@ export function BlockchainSection() {
         </motion.div>
       </div>
 
-      {/* Seven DeFi Principles — full width below the two-column layout */}
+      {/* Seven DeFi Principles — below the two-column layout */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mt-12 w-full"
+        className="w-full"
       >
         <div className="flex items-center gap-3 mb-5">
           <span className="text-[10px] uppercase tracking-[0.25em] text-alarab-gold/80">
@@ -452,6 +455,7 @@ export function BlockchainSection() {
           ))}
         </div>
       </motion.div>
+      </div>
     </section>
   );
 }
