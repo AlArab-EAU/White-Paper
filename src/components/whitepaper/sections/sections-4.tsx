@@ -209,16 +209,59 @@ export function ConclusionSection() {
           <span className="text-gradient-gold">{c.title.highlight}</span>
         </motion.h2>
 
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-base sm:text-lg text-alarab-text/85 leading-relaxed max-w-3xl mx-auto mb-8"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-base sm:text-lg text-alarab-gold/90 font-semibold tracking-wide mb-8"
         >
-          {c.p1}
+          {c.subtitle}
         </motion.p>
 
+        {/* Body paragraphs */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="space-y-4 text-sm sm:text-base text-alarab-text/85 leading-relaxed max-w-3xl mx-auto mb-8 text-left"
+        >
+          <p>{c.p1}</p>
+          <p>{c.p2}</p>
+          <p>{c.p3}</p>
+          <p>{c.p4}</p>
+          <p>{c.p5}</p>
+          <p>{c.p6}</p>
+          <p>{c.p7}</p>
+        </motion.div>
+
+        {/* Bold statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="alarab-panel rounded-xl p-6 mb-6 max-w-3xl mx-auto"
+        >
+          <p className="text-sm sm:text-base text-alarab-text font-semibold leading-relaxed">
+            {c.boldStatement}
+          </p>
+        </motion.div>
+
+        {/* Closing line */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-base sm:text-lg text-alarab-cyan/80 italic mb-10"
+        >
+          {c.closingLine}
+        </motion.p>
+
+        {/* Coin */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -244,27 +287,36 @@ export function ConclusionSection() {
           </div>
         </motion.div>
 
+        {/* Tagline */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="grid sm:grid-cols-3 gap-4 mb-10"
+          className="mb-8"
         >
-          {c.stats.map((s, i) => {
-            const colors = ["#E5B958", "#38BDF8", "#A78BFA"];
-            return (
-              <div key={s.v} className="alarab-panel rounded-xl p-5 text-center">
-                <div
-                  className="text-3xl font-bold mb-1"
-                  style={{ color: colors[i] }}
-                >
-                  {s.k}
-                </div>
-                <div className="text-xs text-alarab-muted">{s.v}</div>
-              </div>
-            );
-          })}
+          <div className="text-2xl sm:text-3xl font-bold text-gradient-gold mb-2">
+            AlArab
+          </div>
+          <div className="text-sm sm:text-base text-alarab-gold/80 font-semibold tracking-wider">
+            {c.tagline}
+          </div>
+        </motion.div>
+
+        {/* Final lines */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, delay: 0.6 }}
+          className="mb-12"
+        >
+          <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-gold leading-tight">
+            {c.finalLine1}
+          </div>
+          <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-gold leading-tight">
+            {c.finalLine2}
+          </div>
         </motion.div>
 
         <motion.div
